@@ -8,10 +8,14 @@ import { TasksService } from 'src/app/global/services/tasks/tasks.service';
   templateUrl: './tasks-view.component.html',
   styleUrls: ['./tasks-view.component.scss']
 })
+
 export class TasksViewComponent implements OnInit {
   public tasks: TaskModel[] = [];
   public title: string = '';
   public description: string = '';
+  public quantity: number = 0;
+  public category: string = 'general';
+  public completed: boolean = false;
   constructor(
     private tasksService: TasksService,
     private socketService: SocketsService
@@ -40,10 +44,14 @@ export class TasksViewComponent implements OnInit {
     // or that -->
     task.title = this.title;
     task.description = this.description;
+    task.completed = this.completed;
+    task.category = this.category;
+    task.quantity = this.quantity;
 
     this.tasksService.create(task).subscribe((result) => {
       this.title = '';
       this.description = '';
+      this.completed = false;
       this.socketService.publish("tasks_update", task);
     });
   }

@@ -15,9 +15,18 @@ const taskSchema = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
+    quantity: { type: Number, default: 0 },
+    completed: { type: Boolean, default: false },
+    category: { type: String, default: 'general' },
   },
   { ...DefaultSchemaOptions }
 );
+
+
+
+
+
+
 
 // ------------------------------------------
 // Schema model exports

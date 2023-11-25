@@ -5,7 +5,7 @@ services:
     image: ${APP_NAME}-backend:${APP_VERSION}
     build: ../backend
     container_name: ${APP_NAME}-backend
-    restart: always
+    restart: unless-stopped
     depends_on:
       - database
     networks:
@@ -24,14 +24,14 @@ services:
     build:
       context: ../frontend
     container_name: ${APP_NAME}-frontend
-    restart: always
+    restart: unless-stopped
     networks:
       - integration-network
 
   database:
     image: mongo:4.2.1-bionic
     container_name: ${APP_NAME}-database
-    restart: always
+    restart: unless-stopped
     command:
       - --auth
       - --bind_ip_all

@@ -1,0 +1,58 @@
+// styles.scss
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+// Remove padding from body to prevent unnecessary space
+
+.navbar {
+  background-color: #333;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; // Ensure it's above other elements
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  .navbar-toggler {
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    background: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .navbar-icons {
+    font-size: 1.8em;
+  }
+
+  .navbar-nav {
+    display: none;
+
+    @media (max-width: 576px) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .navbar-toggler {
+      margin-left: auto;
+    }
+  }
+}
+
+.container {
+  padding-bottom: 60px; // Adjust as needed to account for the navbar height
+}
