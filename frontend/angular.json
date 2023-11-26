@@ -30,7 +30,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/categories",
-              "src/assets/nav-bar"
+              "src/assets/nav-bar",
+              "src/assets/fonts"
             ],
             "styles": [
               "src/styles.scss"
