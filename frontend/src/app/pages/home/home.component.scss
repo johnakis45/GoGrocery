@@ -1,0 +1,67 @@
+// styles.scss
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Curved edges */
+    outline: none;
+    width: 300px; /* Adjust the width as needed */
+  }
+
+// .card {
+//     //margin-left: 10px;
+//     //padding: 25px;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     padding-bottom: 25px;
+//     padding-top: 25px;
+//     margin-right: -5px;
+//     margin-left: -5px;
+//     margin-bottom: 8px;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   }
+  
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    //width: calc(50% - 30px);
+    background-color: rgba(173, 216, 230, 0.8);
+    border: 1px solid #ddd;
+    //padding: 15px;
+    //margin: 15px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 7px;
+    padding-top: 15px;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+    .card-title {
+      font-size: 14px; /* Adjust the font size as needed */
+      font-family: 'Questrial', sans-serif; /* Use the 'Questrial' font family */
+    }
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
