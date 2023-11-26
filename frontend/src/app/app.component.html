@@ -10,17 +10,12 @@
           <img class="navbar-icons" src="assets/cook.svg" alt="cook" />
       </a>
       <a class="nav-item" routerLink="home" [ngClass]="{'selected': selectedIcon === 'inv'}" (click)="toggleIcon('inv')">
-
           <img class="navbar-icons" src="assets/inv.svg" alt="inv" />
-  
       </a>
       <a class="nav-item" routerLink="item-shop" [ngClass]="{'selected': selectedIcon === 'store'}" (click)="toggleIcon('store')">
-
           <img  class="navbar-icons" src="assets/store.svg" alt="shop" />
- 
       </a>
       <a class="nav-item" routerLink="tasks" [ngClass]="{'selected': selectedIcon === 'list'}" (click)="toggleIcon('list')">
- 
           <img class="navbar-icons" src="assets/list.svg" alt="list" />
       </a>
     </div>
