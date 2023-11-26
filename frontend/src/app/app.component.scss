@@ -9,15 +9,17 @@ body {
 // Remove padding from body to prevent unnecessary space
 
 .navbar {
-  background-color: #333;
-  color: white;
   position: fixed;
+  background-color: rgba(255, 255, 255, 0.80);
+  color: rgb(255, 255, 255);
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 1000; // Ensure it's above other elements
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 40px 40px 0px 0px ;
+  backdrop-filter: blur(4.5px);
+  height: 80px; // Adjust the height of the navbar
+  flex-shrink: 0;
 
   .navbar-toggler {
     color: white;
@@ -26,23 +28,54 @@ body {
     background: none;
     cursor: pointer;
     outline: none;
+
+    &.selected {
+      fill: orange;
+    }
   }
 
   .navbar-icons {
-    font-size: 1.8em;
+    fill: black; // default color
+    transition: fill 0.3s ease; // optional for a smooth transition
+  
+    &.selected {
+      fill: orange; // selected color
+    }
   }
+
+
+.navbar-icons img {
+  filter: grayscale(100%) invert(100%);
+  transition: filter 0.3s ease; // Optional for a smooth transition
+}
+
+.navbar-icons.selected img {
+  filter: grayscale(0%) invert(0%) sepia(100%) saturate(1000%) hue-rotate(50deg); // Adjust values as needed
+}
+
+
+  
 
   .navbar-nav {
     display: none;
 
     @media (max-width: 576px) {
       display: flex;
-      justify-content: space-around;
       align-items: center;
-    }
+      flex-direction: row; // Ensure icons are in the same row
+      justify-content: space-between; // Icons on the left and right
 
-    .nav-item {
-      margin-right: 10px;
+      .nav-item {
+        margin-right: 34px;
+        margin-left: 30px;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        text-decoration: none; // Remove underlining
+
+        &.selected {
+          color: orange;
+        }
+      }
     }
   }
 

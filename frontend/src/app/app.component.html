@@ -1,19 +1,30 @@
 <!-- app.component.html -->
 
-
 <router-outlet></router-outlet>
 
 <!-- START: menu navbar. Delete this code in order to remove the menu -->
 <div>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="navbar-icons">Icon</i>
-    </button>
+  <nav class="navbar navbar-expand-lg p-3">
     <div class="navbar-nav">
-      <a class="nav-item" routerLink="item-shop"><i class="navbar-icons">Icon</i></a>
-      <a class="nav-item" routerLink="tasks"><i class="navbar-icons">Icon</i></a>
+      <a class="nav-item" routerLink="cook" [ngClass]="{'selected': selectedIcon === 'cook', 'unselected': selectedIcon !== 'cook'}" (click)="toggleIcon('cook')">
+          <img class="navbar-icons" src="assets/cook.svg" alt="cook" />
+      </a>
+      <a class="nav-item" routerLink="home" [ngClass]="{'selected': selectedIcon === 'inv'}" (click)="toggleIcon('inv')">
+
+          <img class="navbar-icons" src="assets/inv.svg" alt="inv" />
+  
+      </a>
+      <a class="nav-item" routerLink="item-shop" [ngClass]="{'selected': selectedIcon === 'store'}" (click)="toggleIcon('store')">
+
+          <img  class="navbar-icons" src="assets/store.svg" alt="shop" />
+ 
+      </a>
+      <a class="nav-item" routerLink="tasks" [ngClass]="{'selected': selectedIcon === 'list'}" (click)="toggleIcon('list')">
+ 
+          <img class="navbar-icons" src="assets/list.svg" alt="list" />
+      </a>
     </div>
   </nav>
 </div>
 <!-- END: menu navbar. Delete this code in order to remove the menu -->
+
