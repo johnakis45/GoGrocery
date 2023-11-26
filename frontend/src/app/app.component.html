@@ -1,5 +1,27 @@
 <!-- app.component.html -->
-
+<!-- START: header navbar. Delete this code in order to remove the menu -->
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <a class="notification">
+            <img src="assets/head-bar-phone/notification.svg" alt="notification" />
+        </a>
+      </div>
+      <div class="col-6">
+        <div class="title">
+          <div><span class="Go">Go</span><span class="Grocery">Grocery</span></div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="profilepic">
+          <img src="assets/head-bar-phone/profilepic.png" alt="profilepic" />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- END: header navbar. Delete this code in order to remove the menu -->
 <router-outlet></router-outlet>
 
 <!-- START: menu navbar. Delete this code in order to remove the menu -->
@@ -7,16 +29,16 @@
   <nav class="navbar navbar-expand-lg p-3">
     <div class="navbar-nav">
       <a class="nav-item" routerLink="cook" [ngClass]="{'selected': selectedIcon === 'cook', 'unselected': selectedIcon !== 'cook'}" (click)="toggleIcon('cook')">
-          <img class="navbar-icons" src="assets/cook.svg" alt="cook" />
+          <img class="navbar-icons" src="assets/nav-bar/cook.svg" alt="cook" />
       </a>
       <a class="nav-item" routerLink="home" [ngClass]="{'selected': selectedIcon === 'inv'}" (click)="toggleIcon('inv')">
-          <img class="navbar-icons" src="assets/inv.svg" alt="inv" />
+          <img class="navbar-icons" src="assets/nav-bar/inv.svg" alt="inv" />
       </a>
       <a class="nav-item" routerLink="item-shop" [ngClass]="{'selected': selectedIcon === 'store'}" (click)="toggleIcon('store')">
-          <img  class="navbar-icons" src="assets/store.svg" alt="shop" />
+          <img  class="navbar-icons" src="assets/nav-bar/store.svg" alt="shop" />
       </a>
       <a class="nav-item" routerLink="tasks" [ngClass]="{'selected': selectedIcon === 'list'}" (click)="toggleIcon('list')">
-          <img class="navbar-icons" src="assets/list.svg" alt="list" />
+          <img class="navbar-icons" src="assets/nav-bar/list.svg" alt="list" />
       </a>
     </div>
   </nav>
