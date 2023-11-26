@@ -98,7 +98,10 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/head-bar-phone",
+              "src/assets/nav-bar-phone",
+              "src/assets/categories"
             ],
             "styles": [
               "src/styles.scss"
