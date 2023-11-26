@@ -79,27 +79,15 @@ header {
     }
   }
 
-  .navbar-icons {
-    fill: black; // default color
-    transition: fill 0.3s ease; // optional for a smooth transition
+  // .navbar-icons {
+  //   fill: black; // default color
+  //   transition: fill 0.3s ease; // optional for a smooth transition
   
-    &.selected {
-      fill: orange; // selected color
-    }
-  }
+  //   &.selected {
+  //     fill: orange; // selected color
+  //   }
+  // }
 
-
-.navbar-icons img {
-  filter: grayscale(100%) invert(100%);
-  transition: filter 0.3s ease; // Optional for a smooth transition
-}
-
-.navbar-icons.selected img {
-  filter: grayscale(0%) invert(0%) sepia(100%) saturate(1000%) hue-rotate(50deg); // Adjust values as needed
-}
-
-
-  
 
   .navbar-nav {
     display: none;
@@ -111,10 +99,10 @@ header {
       justify-content: space-between; // Icons on the left and right
 
       .nav-item {
-        margin-right: 34px;
-        margin-left: 30px;
-        margin-bottom: 6px;
-        margin-top: 10px;
+        margin-right: 25px;
+        margin-left: 20px;
+        //margin-bottom: 6px;
+        //margin-top: 10px;
         text-decoration: none; // Remove underlining
 
         &.selected {
