@@ -20,6 +20,7 @@
     width: 300px; /* Adjust the width as needed */
   }
 
+
 // .card {
 //     //margin-left: 10px;
 //     //padding: 25px;
@@ -49,8 +50,7 @@
     //margin: 15px;
     border-radius: 10px;
     text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
+ 
     padding-bottom: 7px;
     padding-top: 15px;
     margin-right: -5px;
@@ -59,9 +59,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
+    .card-image{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
 
     .card-title {
       font-size: 14px; /* Adjust the font size as needed */
+      text-align: center;
       font-family: 'Questrial', sans-serif; /* Use the 'Questrial' font family */
     }
 
