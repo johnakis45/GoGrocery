@@ -6,21 +6,21 @@
 }
 
 .search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
   
-.search-input {
-  padding: 12px;
-  margin-bottom: -10px;
-  border: 1px solid #ccc;
-  border-radius: 10px; /* Curved edges */
-  outline: none;
-  width: 350px; /* Adjust the width as needed */
-  height: 50px;
-}
+  .search-input {
+    padding: 12px;
+    margin-bottom: -10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Curved edges */
+    outline: none;
+    width: 350px; /* Adjust the width as needed */
+    height: 50px;
+  }
 
 
 // .card {
