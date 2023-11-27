@@ -10,10 +10,13 @@ body {
   // font-family: Arial, sans-serif;
 }
 
+
+
 // Remove padding from body to prevent unnecessary space
 header {
   height: 80px;
-
+  background-color: #EFEEEE;
+  scroll-behavior: smooth;
   .title {
   .Go{
     color: #5FB57E; 
