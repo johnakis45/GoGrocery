@@ -20,7 +20,7 @@ export class InventoryService {
 
   public getAll(): Observable<InventoryModel[]> {
     return this.http
-      .get<InventoryModel[]>(`${this.hostURl}/api/tasks`)
+      .get<InventoryModel[]>(`${this.hostURl}/api/inventory`)
       .pipe(map(result => _.map(result, (t) => new InventoryModel(t))));
   }
 

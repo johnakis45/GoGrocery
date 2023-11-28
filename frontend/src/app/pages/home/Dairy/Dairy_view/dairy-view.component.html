@@ -1,17 +1,17 @@
 <div class="container mt-5">
   <div class="scrollable-container pb-2 pr-2">
-    <div class="task-container px-3 pt-3 pb-3 mt-1" *ngFor="let task of tasks">
+    <div class="item-container px-3 pt-3 pb-3 mt-1" *ngFor="let item of items">
       <div class="d-flex justify-content-between">
         <h4 class="content mb-3">
-          {{ task.title }}
+          {{ item.name }}
         </h4>
-        <i class="fa fa-window-close pointer-cursor delete-task" (click)=" deleteTask(task)"></i>
+        <i class="fa fa-window-close pointer-cursor delete-item" (click)=" deleteTask(item)"></i>
       </div>
       <div class="mb-3">
-        {{ task.description }}
+        {{ item.quantity }}
       </div>
       <div class="creation-date text-muted">
-        <i>created at: {{ task.createdAt }}</i>
+        <i>created at: {{ item.createdAt }}</i>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-.task-container {
+.item-container {
   background-color: ghostwhite;
   border-radius: 5px;
   box-shadow: 2px 2px 4px lightgray;
@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-.delete-task {
+.delete-item {
   height: 13px;
 }
 ::-webkit-scrollbar {

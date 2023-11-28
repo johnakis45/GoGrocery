@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { DairyViewComponent } from './Dairy/Dairy_view/dairy-view.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent,
+    DairyViewComponent],
   imports: [
     CommonModule,
     FormsModule,
