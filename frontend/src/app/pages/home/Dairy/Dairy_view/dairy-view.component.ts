@@ -11,6 +11,7 @@ import { InventoryService } from 'src/app/global/services/inventory/inventory.se
 
 export class DairyViewComponent implements OnInit {
   public items: InventoryModel[] = [];
+  public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';
   public quantity: number = 0;
   public category: string = 'dairy';
