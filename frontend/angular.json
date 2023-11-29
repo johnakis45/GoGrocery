@@ -31,7 +31,8 @@
               "src/assets",
               "src/assets/categories",
               "src/assets/nav-bar",
-              "src/assets/fonts"
+              "src/assets/fonts",
+              "src/assets/fridge"
             ],
             "styles": [
               "src/styles.scss"
