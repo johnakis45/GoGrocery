@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { InventoryRoutingModule } from './inventory-routing.module';
 import { InventoryComponent } from './inventory.component';
+import { InventoryViewComponent } from './Inventory_view/inventory-view.component';
 
 
 @NgModule({
-  declarations: [InventoryComponent],
+  declarations: [InventoryViewComponent],
   imports: [
     CommonModule,
     FormsModule,

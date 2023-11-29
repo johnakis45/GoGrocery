@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: InventoryComponent,
     children: [
-      { path: 'view', component: InventoryViewComponent },
+      { path: '', component: InventoryViewComponent },
       { path: '**', redirectTo: 'view', pathMatch: 'full' },]
   },
 

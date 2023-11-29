@@ -32,4 +32,14 @@ export class HomeComponent implements OnInit {
     // Add more cards as needed
   ];
 
+  selectedCategory: string | null = null;
+
+  toggleIcon(category: string): void {
+    console.log('Category clicked:', category);
+    if (this.selectedCategory !== category) {
+      this.selectedCategory = category;
+      console.log('Category icon:', this.selectedCategory);
+    }
+  }
+
 }

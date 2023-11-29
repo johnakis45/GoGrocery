@@ -21,5 +21,7 @@ export class InventoryComponent implements OnInit {
     this.isInputFocused = false;
   }
 
+  
+
 
 }
