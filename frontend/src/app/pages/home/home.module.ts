@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { DairyViewComponent } from './Dairy/Dairy_view/dairy-view.component';
+import { InventoryViewComponent } from './Inventory/Inventory_view/inventory-view.component';
 
 
 @NgModule({
   declarations: [HomeComponent,
-    DairyViewComponent],
+    InventoryViewComponent],
   imports: [
     CommonModule,
     FormsModule,

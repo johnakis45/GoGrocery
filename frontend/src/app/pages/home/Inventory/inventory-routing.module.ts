@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DairyViewComponent } from './Dairy_view/dairy-view.component';
-import { DairyComponent } from './dairy.component';
+import { InventoryViewComponent } from './Inventory_view/inventory-view.component';
+import { InventoryComponent } from './inventory.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DairyComponent,
+    component: InventoryComponent,
     children: [
-      { path: 'view', component: DairyViewComponent },
+      { path: 'view', component: InventoryViewComponent },
       { path: '**', redirectTo: 'view', pathMatch: 'full' },]
   },
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DairyRoutingModule { }
+export class InventoryRoutingModule { }
