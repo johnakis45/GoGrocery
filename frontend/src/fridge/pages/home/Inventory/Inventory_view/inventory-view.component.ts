@@ -4,13 +4,14 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 
 @Component({
-  selector: 'app-dairy-view',
-  templateUrl: './dairy-view.component.html',
-  styleUrls: ['./dairy-view.component.scss']
+  selector: 'app-inventory-view',
+  templateUrl: './inventory-view.component.html',
+  styleUrls: ['./inventory-view.component.scss']
 })
 
-export class DairyViewComponent implements OnInit {
+export class InventoryViewComponent implements OnInit {
   public items: InventoryModel[] = [];
+  public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';
   public quantity: number = 0;
   public category: string = 'dairy';

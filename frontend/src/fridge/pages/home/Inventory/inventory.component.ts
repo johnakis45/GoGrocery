@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 @Component({
-  selector: 'app-dairy',
-  templateUrl: './dairy.component.html',
-  styleUrls: ['./dairy.component.scss']
+  selector: 'app-inventory',
+  templateUrl: './inventory.component.html',
+  styleUrls: ['./inventory.component.scss']
 })
-export class DairyComponent implements OnInit {
+export class InventoryComponent implements OnInit {
 
   constructor(private socketsService: SocketsService) { }
 
