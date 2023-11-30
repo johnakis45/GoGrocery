@@ -138,7 +138,22 @@
       letter-spacing: 0.1px;
       justify-content: center;
       flex-direction: column;
-      
+
+      // Animation related styles
+  opacity: 1; // Initial opacity for fade-in animation
+  transition: opacity 0.5s ease-in-out; // Transition property for smooth animation
+  }
+
+  .added {
+    display: none;
+  
+    // Animation related styles
+    opacity: 0; // Initial opacity for fade-in animation
+    transition: opacity 0.5s ease-in-out; // Transition property for smooth animation
+  }
+  
+  .added.ng-star-inserted {
+    display: block;
   }
 
   img {

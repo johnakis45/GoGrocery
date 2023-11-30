@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
@@ -6,7 +7,15 @@ import { InventoryService } from 'src/app/global/services/inventory/inventory.se
 @Component({
   selector: 'app-inventory-view',
   templateUrl: './inventory-view.component.html',
-  styleUrls: ['./inventory-view.component.scss']
+  styleUrls: ['./inventory-view.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(500)),
+    ])
+  ]
 })
 
 export class InventoryViewComponent implements OnInit {
@@ -62,5 +71,18 @@ export class InventoryViewComponent implements OnInit {
         this.socketService.publish("inventory_update", {});
       });
     }
+  }
+
+
+  isAdded: boolean = false;
+  addItem(item : any) {
+    console.log("add item");
+    this.isAdded = true;
+    //this.postTask();
+
+    // Reset the "Added" text after a delay (you can adjust the delay as needed)
+    setTimeout(() => {
+      this.isAdded = false;
+    }, 2000); // 2000 milliseconds (2 seconds) in this example
   }
 }
