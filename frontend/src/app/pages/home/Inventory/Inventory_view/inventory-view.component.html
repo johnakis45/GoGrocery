@@ -1,6 +1,18 @@
-<div class="rectangle33"></div>
-<div class="h1">Diet Coke 355ml</div>
-<div class="rectangle63"></div>
-<div class="h12">Add</div>
-<div class="h2">× 2</div>
-<div class="pngfuel11"></div>
+<div class="container-fluid py-3">
+    <div class="row">
+        <div class="col-6" *ngFor="let item of items">
+            <div class="card">
+                <div class="card-image">
+                    <img class="card-img-top fixed-height-ima " [src]="item.image" alt="Item image">  
+                </div>
+                <div class="quantity">x {{ item.quantity}}</div>
+                <div class="card-body" style="white-space: nowrap;">
+                    <h2 class="card-title">{{ item.name }} </h2>
+                </div>
+                <div class="btn_br">
+                    <div class="add">Add</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

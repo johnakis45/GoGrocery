@@ -8,7 +8,7 @@ import { InventoryComponent } from './Inventory/inventory.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent,InventoryComponent],
   imports: [
     CommonModule,
     FormsModule,

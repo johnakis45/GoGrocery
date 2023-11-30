@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 export class InventoryComponent implements OnInit {
 
   constructor(private socketsService: SocketsService) { }
+
+  @Input() selectedCategory: string = '';
 
   ngOnInit(): void { }
   isInputFocused: boolean = false;

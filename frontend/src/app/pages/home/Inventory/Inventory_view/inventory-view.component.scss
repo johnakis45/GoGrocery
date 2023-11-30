@@ -1,116 +1,51 @@
-:host,
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  flex-shrink: 0;
-  text-decoration: none;
-  min-width: 0;
-  overflow-wrap: anywhere;
+// styles.scss
+
+@font-face {
+  font-family: 'Questrial';
+  src: url('/assets/fonts/Questrial-Regular.ttf') format('truetype');
 }
 
-:host,
-:not(span, a, ul, ol, li, p) {
-  display: flex;
-}
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .search-input {
+    padding: 12px;
+    margin-bottom: -10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Curved edges */
+    outline: none;
+    width: 350px; /* Adjust the width as needed */
+    height: 50px;
+  }
 
-ul,
-ol {
-  text-indent: 0;
-  padding-inline-start: 1.5em;
-}
 
-p:empty::before {
-  content: '';
-  display: inline-block;
-}
+// .card {
+//     //margin-left: 10px;
+//     //padding: 25px;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     padding-bottom: 25px;
+//     padding-top: 25px;
+//     margin-right: -5px;
+//     margin-left: -5px;
+//     margin-bottom: 8px;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   }
+  
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
 
-img {
-  object-fit: contain;
-}
-
-svg {
-  overflow: visible;
-}
-
-:host {
-  position: relative;
-  width: 173.3672px;
-  height: 210px;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.rectangle33 {
-  position: absolute;
-  left: 0;
-  right: 0.2118%;
-  top: 0;
-  bottom: 0;
-  outline: solid 1px #b4b4b4;
-  outline-offset: -1px;
-  border-radius: 18px;
-  background-color: #fff;
-  box-shadow: 0px 6px 12px 0px #0000;
-}
-.h1 {
-  color: #181725;
-  font-size: 16px;
-  line-height: 18px;
-  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
-  letter-spacing: 0.1px;
-  position: absolute;
-  left: 8.6522%;
-  right: 12.3117%;
-  top: 69.0476%;
-  bottom: 22.381%;
-  height: min-content;
-  flex-direction: column;
-}
-.rectangle63 {
-  position: absolute;
-  left: 4.0377%;
-  right: 6.5567%;
-  top: 80.4762%;
-  bottom: 2.381%;
-  outline: solid 1px #53b175b2;
-  outline-offset: -1px;
-  border-radius: 17px;
-  background-color: #53b175b2;
-}
-.h12 {
-  color: #fff;
-  font-size: 20px;
-  line-height: 18px;
-  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
-  letter-spacing: 0.1px;
-  position: absolute;
-  left: 36.3391%;
-  right: 38.8581%;
-  top: 84.7619%;
-  bottom: 6.6667%;
-  justify-content: center;
-  flex-direction: column;
-}
-.h2 {
-  color: #000;
-  font-size: 32px;
-  line-height: 18px;
-  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
-  position: absolute;
-  left: 54.797%;
-  right: 0;
-  top: 32.8571%;
-  bottom: 60.051%;
-  justify-content: center;
-  flex-direction: column;
-}
-.pngfuel11 {
-  position: absolute;
+  .card img {
+    object-fit: contain;
   left: 19.6116%;
   right: 54.7252%;
   top: 14.7619%;
@@ -119,4 +54,112 @@ svg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+  }
+
+  .card {
+    //width: calc(50% - 30px);
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.57)000;
+    //padding: 15px;
+    //margin: 15px;
+    border-radius: 10px;
+    text-align: center;
+ 
+    padding-bottom: 7px;
+    padding-top: 15px;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    .card-image{
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-right: 20%;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        display: inline-block;
+        max-width: 100%;  // Ensure the image doesn't exceed the container width
+        height: 100%;
+        height: auto;     // Maintain aspect ratio
+    }
+
+
+
+
+  .card-title {
+    color: #181725;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.1px;
+    position: absolute;
+    left: 8.6522%;
+    right: 12.3117%;
+    top: 69.0476%;
+    bottom: 22.381%;
+    height: min-content;
+    justify-content: left;
+  }
+  
+  .quantity {
+    color: #000;
+    font-size: 32px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 54.797%;
+    right: 0;
+    top: 32.8571%;
+    bottom: 60.051%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .add {
+      color: #fff;
+      position: absolute;
+      left: 0;
+      right: 54.797%;
+      top: 25%;
+      bottom: 20%;
+      font-size: 20px;
+      line-height: 18px;
+      font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+      letter-spacing: 0.1px;
+      justify-content: center;
+      flex-direction: column;
+      
+  }
+
+  img {
+    display: inline-block;
+    max-width: 100%;  // Ensure the image doesn't exceed the container width
+    height: auto;     // Maintain aspect ratio
+    border-radius: 5px;
+    width: 100%;      // Make sure the image takes the full width of its container
+    left: 19.6116%;
+    right: 54.7252%;
+    top: 14.7619%;
+    bottom: 42.6842%;
+  }
+
+  }
+
+
+  .btn_br {
+    position: absolute;
+    left: 4.0377%;
+    right: 6.5567%;
+    top: 80.4762%;
+    bottom: 2.381%;
+    outline: solid 1px #53b175b2;
+    outline-offset: -1px;
+    border-radius: 17px;
+    background-color: #53b175b2;
+  }

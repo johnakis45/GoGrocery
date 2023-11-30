@@ -34,12 +34,14 @@ export class HomeComponent implements OnInit {
 
   selectedCategory: string | null = null;
 
-  toggleIcon(category: string): void {
+  toggleCategory(category: string): void {
     console.log('Category clicked:', category);
     if (this.selectedCategory !== category) {
       this.selectedCategory = category;
       console.log('Category icon:', this.selectedCategory);
     }
   }
+
+  
 
 }
