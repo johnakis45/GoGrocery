@@ -1,48 +1,24 @@
-<div class="container mt-5">
-  <div class="scrollable-container pb-2 pr-2">
-    <div class="task-container px-3 pt-3 pb-3 mt-1" *ngFor="let task of tasks">
-      <div class="d-flex justify-content-between">
-        <h4 class="content mb-3">
-          {{ task.title }}
-        </h4>
-        <i class="fa fa-window-close pointer-cursor delete-task" (click)=" deleteTask(task)"></i>
-      </div>
-      <div class="mb-3">
-        {{ task.description }}
-      </div>
-      <div class="creation-date text-muted">
-        <i>created at: {{ task.createdAt }}</i>
-      </div>
-    </div>
-  </div>
-  <div class="task-form mt-2">
-    <form #taskForm="ngForm" (ngSubmit)="taskForm.form.valid && postTask(); taskForm.resetForm()"
-      class="form-container task-form">
-      <div>
-        <label for="taskTitleInput">
-          Title:
-        </label>
-        <input class="form-control mt-1" id="taskTitleInput" [(ngModel)]="title" name="inputtitle" />
-        
-        <label for="taskDescriptionInput">
-          Description:
-        </label>
-        <input class="form-control mt-1" id="taskDescriptionInput" [(ngModel)]="description" name="inputdescription" />
-
-        <label for="taskCompletedInput">
-          Completed:
-        </label>
-        <input class="form-control mt-1" id="taskCompletedInput" [(ngModel)]="completed" name="inputcompleted" />
-
-        
-        
-
-        <div class="task-btn mt-1">
-          <button type="submit" class="btn btn-primary pull-right">
-            Send
-          </button>
+<div class="container">
+    <div class="row" *ngFor="let task of tasks">
+        <div class="col-4">
+            <div class="item-image">
+                <img [src]="task.image" alt="Item image">
+            </div>
         </div>
-      </div>
-    </form>
-  </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="item-title">{{task.title}}<div class="h2">4pcs</div></div> 
+            </div>
+
+            <div class="row">
+                <div class="minus_icon"><i (click)=" subtract(task)"><img src="assets/minus-icon.svg" alt="minus" class="icon" /></i></div>
+                <div class="h12">{{task.quantity}}</div>
+                <div class="plus_icon"><i (click)=" add(task)"><img src="assets/plus-icon.svg" alt="plus" class="icon" /></i></div>
+
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="x_icon"><i (click)=" deleteTask(task)"><img src="assets/x-icon.svg" alt="x" class="icon" /></i></div>
+        </div>
+    </div>
 </div>

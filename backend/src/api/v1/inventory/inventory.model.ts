@@ -17,7 +17,8 @@ const inventorySchema = new Schema(
     image: { type: String, default: '' },
     quantity: { type: Number, default: 0 },
     category: { type: String, default: 'general' },
-
+    description: { type: String, required: true },
+    completed: { type: Boolean, default: false },
   },
   { ...DefaultSchemaOptions }
 );

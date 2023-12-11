@@ -31,7 +31,7 @@ export class InventoryViewComponent implements OnInit {
   }
 
   private getAllTasks(): void {
-    this.inventoryService.getAll().subscribe((result) => {
+    this.inventoryService.getAllInventory().subscribe((result) => {
       this.items = result;
     });
   }
@@ -42,11 +42,11 @@ export class InventoryViewComponent implements OnInit {
     // this--> const task = new TaskModel({ title: this.title, description: this.description });
     const task = new InventoryModel();
     // or that -->
-    task.name = this.title;
+    task.title = this.title;
     task.category = this.category;
     task.quantity = this.quantity;
 
-    this.inventoryService.create(task).subscribe((result) => {
+    this.inventoryService.createInventory(task).subscribe((result) => {
       this.title = '';
       this.quantity = 0;
       this.category = 'dairy';
@@ -57,7 +57,7 @@ export class InventoryViewComponent implements OnInit {
   public deleteTask(task: InventoryModel): void {
     const response = confirm("Are you sure you want to delete this task?");
     if (response) {
-      this.inventoryService.delete(task._id).subscribe(() => {
+      this.inventoryService.deleteInventory(task._id).subscribe(() => {
         this.getAllTasks();
         this.socketService.publish("inventory_update", {});
       });

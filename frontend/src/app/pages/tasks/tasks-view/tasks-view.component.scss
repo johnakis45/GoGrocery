@@ -1,43 +1,118 @@
-.task-container {
-  background-color: ghostwhite;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px lightgray;
+// styles.scss
+
+@font-face {
+  font-family: 'Questrial';
+  src: url('/assets/fonts/Questrial-Regular.ttf') format('truetype');
 }
 
-.scrollable-container {
-  height: 350px;
-  overflow: auto;
+
+
+  .item-image {
+    padding-right: 10px;
+    margin-bottom: 18px;
+    display: inline-block;
+    //max-width: 100%;  // Ensure the image doesn't exceed the container width
+    //height: 100%;
+    width: 100px;
+    height: 70px; // Maintain aspect ratio
+    object-fit: contain;
+
+  }
+
+
+
+
+  .item-title {
+    color: #181725;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.1px;
+    height: min-content;
+  }
+
+  .h2::before{
+    content: "\a";
+    white-space: pre;
 }
 
-.creation-date {
-  font-size: small;
-}
+  .h2 {
+    color: #7c7c7c;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+      height: min-content;
+      margin-top: -20px; 
+  }
 
-.pointer-cursor{
-  cursor: pointer;
-}
+  .plus_icon {
+    width: 45.67px;
+    height: 45.6684px;
+    padding-left: 10px;
+    
+    //max-width: 100%;  // Ensure the image doesn't exceed the container width
+    //height: 100%;
+    object-fit: contain;
+  }
 
-.delete-task {
-  height: 13px;
-}
-::-webkit-scrollbar {
-  width: 15px;
-}
+  .x_icon{
+    display: inline-block;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 5px;
-}
+  .minus_icon {
+    width: 45.67px;
+    height: 45.6684px;
+    padding-right: 10px;
+    overflow: visible;
+    display: inline-block;
+    //max-width: 100%;  // Ensure the image doesn't exceed the container width
+    //height: 100%;
+    object-fit: contain;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: lightblue;
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 5px;
-}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: lightgray;
-}
+
+  // .quantity {
+  //   color: #000;
+  //   font-size: 32px;
+  //   line-height: 18px;
+  //   font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+  //     'Liberation Sans', sans-serif;
+  //   position: absolute;
+  //   left: 54.797%;
+  //   right: 0;
+  //   top: 32.8571%;
+  //   bottom: 60.051%;
+  //   justify-content: center;
+  //   flex-direction: column;
+  // }
+
+
+
+  .added.ng-star-inserted {
+    display: block;
+  }
+
+  img {
+    max-width: 100%; // Ensure the image doesn't exceed the container width
+    height: auto; // Maintain aspect ratio
+    border-radius: 5px;
+    width: 100%; // Make sure the image takes the full width of its container
+  }
+
+
+  .h12 {
+    margin-top: 10px;
+    color: #181725;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.1px;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+  }

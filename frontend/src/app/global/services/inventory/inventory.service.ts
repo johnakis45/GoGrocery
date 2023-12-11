@@ -18,32 +18,62 @@ export class InventoryService {
     this.hostURl = environment.host;
   }
 
-  public getAll(): Observable<InventoryModel[]> {
+  public getAllInventory(): Observable<InventoryModel[]> {
     return this.http
       .get<InventoryModel[]>(`${this.hostURl}/api/inventory`)
       .pipe(map(result => _.map(result, (t) => new InventoryModel(t))));
   }
 
-  public getById(id: string): Observable<InventoryModel> {
+  public getByIdInventory(id: string): Observable<InventoryModel> {
     return this.http
       .get<InventoryModel>(`${this.hostURl}/api/inventory/${id}`)
       .pipe(map(result => new InventoryModel(result)));
   }
 
-  public create(resource: InventoryModel): Observable<InventoryModel> {
+  public createInventory(resource: InventoryModel): Observable<InventoryModel> {
     return this.http
       .post<InventoryModel>(`${this.hostURl}/api/inventory`, resource)
       .pipe(map(result => new InventoryModel(result)));
   }
 
-  public update(resource: InventoryModel): Observable<InventoryModel> {
+  public updateInventory(resource: InventoryModel): Observable<InventoryModel> {
     return this.http
       .put<InventoryModel>(`${this.hostURl}/api/inventory/${resource._id}`, resource)
       .pipe(map(result => new InventoryModel(result)));
   }
 
-  public delete(id: string): Observable<void> {
+  public deleteInventory(id: string): Observable<void> {
     return this.http.delete<void>(`${this.hostURl}/api/inventory/${id}`);
+  }
+
+
+
+  public getAllList(): Observable<InventoryModel[]> {
+    return this.http
+      .get<InventoryModel[]>(`${this.hostURl}/api/list`)
+      .pipe(map(result => _.map(result, (t) => new InventoryModel(t))));
+  }
+
+  public getByIdList(id: string): Observable<InventoryModel> {
+    return this.http
+      .get<InventoryModel>(`${this.hostURl}/api/list/${id}`)
+      .pipe(map(result => new InventoryModel(result)));
+  }
+
+  public createList(resource: InventoryModel): Observable<InventoryModel> {
+    return this.http
+      .post<InventoryModel>(`${this.hostURl}/api/list`, resource)
+      .pipe(map(result => new InventoryModel(result)));
+  }
+
+  public updateList(resource: InventoryModel): Observable<InventoryModel> {
+    return this.http
+      .put<InventoryModel>(`${this.hostURl}/api/list/${resource._id}`, resource)
+      .pipe(map(result => new InventoryModel(result)));
+  }
+
+  public deleteList(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.hostURl}/api/list/${id}`);
   }
 
 }

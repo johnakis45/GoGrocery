@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction, Router } from 'express';
-import { ITask, TaskModel } from './task.model';
 import { ResourceController } from '../../shared';
 import { StatusCodes } from 'http-status-codes';
 import { Logger } from '../../shared/utils/logger';
-export class TaskController extends ResourceController<ITask>{
+import { InventoryModel,Iinventory } from '../inventory/inventory.model';
+export class TaskController extends ResourceController<Iinventory>{
     private logger: Logger = new Logger();
     constructor() {
-        super(TaskModel);
+        super(InventoryModel);
     }
     /**
      * Apply all routes for tasks

@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
+import { TasksService } from 'src/app/global/services/tasks/tasks.service';
 
 @Component({
   selector: 'app-inventory-view',
@@ -24,6 +25,9 @@ export class InventoryViewComponent implements OnInit {
   public title: string = '';
   public quantity: number = 0;
   public category: string = 'dairy';
+  public description: string = '';;
+  public completed: boolean = false;
+  public image: string = '';
   public categories: string[] = ['general', 'dairy', 'meat', 'vegetables', 'fruits', 'drinks', 'snacks', 'other'];
   constructor(
     private inventoryService: InventoryService,
@@ -40,7 +44,7 @@ export class InventoryViewComponent implements OnInit {
   }
 
   private getAllTasks(): void {
-    this.inventoryService.getAll().subscribe((result) => {
+    this.inventoryService.getAllInventory().subscribe((result) => {
       this.items = result;
     });
   }
@@ -51,11 +55,11 @@ export class InventoryViewComponent implements OnInit {
     // this--> const task = new TaskModel({ title: this.title, description: this.description });
     const task = new InventoryModel();
     // or that -->
-    task.name = this.title;
+    task.title = this.title;
     task.category = this.category;
     task.quantity = this.quantity;
 
-    this.inventoryService.create(task).subscribe((result) => {
+    this.inventoryService.createInventory(task).subscribe((result) => {
       this.title = '';
       this.quantity = 0;
       this.category = 'dairy';
@@ -66,7 +70,7 @@ export class InventoryViewComponent implements OnInit {
   public deleteTask(task: InventoryModel): void {
     const response = confirm("Are you sure you want to delete this task?");
     if (response) {
-      this.inventoryService.delete(task._id).subscribe(() => {
+      this.inventoryService.deleteInventory(task._id).subscribe(() => {
         this.getAllTasks();
         this.socketService.publish("inventory_update", {});
       });
@@ -74,9 +78,20 @@ export class InventoryViewComponent implements OnInit {
   }
 
 
+
   isAdded: boolean = false;
-  addItem(item : any) {
+  public addItem() {
+    const item = new InventoryModel();
+    // or that -->
+    item.title = this.title;
+    item.description = this.description;
+    item.completed = this.completed;
+    item.category = this.category;
+    item.quantity = this.quantity;
+    item.image = this.image;
+
     console.log("add item");
+    this.inventoryService.createList(item).subscribe((result) => {this.socketService.publish("list_update", item);});
     this.isAdded = true;
     //this.postTask();
 

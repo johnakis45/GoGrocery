@@ -17,7 +17,7 @@ apiV1Router
     new ItemShopController().applyRoutes()
   )
   .use(
-    '/tasks',
+    '/list',
     new TaskController().applyRoutes()
   )
   .use(

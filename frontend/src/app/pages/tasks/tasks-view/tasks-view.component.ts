@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskModel } from 'src/app/global/models/tasks/task.model';
+import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
-import { TasksService } from 'src/app/global/services/tasks/tasks.service';
+import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 
 @Component({
   selector: 'app-tasks-view',
@@ -10,14 +10,15 @@ import { TasksService } from 'src/app/global/services/tasks/tasks.service';
 })
 
 export class TasksViewComponent implements OnInit {
-  public tasks: TaskModel[] = [];
+  public tasks: InventoryModel[] = [];
   public title: string = '';
   public description: string = '';
   public quantity: number = 0;
   public category: string = 'general';
   public completed: boolean = false;
+  public image: string = '';
   constructor(
-    private tasksService: TasksService,
+    private InventoryService: InventoryService,
     private socketService: SocketsService
   ) { }
 
@@ -31,7 +32,7 @@ export class TasksViewComponent implements OnInit {
   }
 
   private getAllTasks(): void {
-    this.tasksService.getAll().subscribe((result) => {
+    this.InventoryService.getAllList().subscribe((result) => {
       this.tasks = result;
     });
   }
@@ -40,15 +41,16 @@ export class TasksViewComponent implements OnInit {
     // Emit event for update tasks
 
     // this--> const task = new TaskModel({ title: this.title, description: this.description });
-    const task = new TaskModel();
+    const task = new InventoryModel();
     // or that -->
     task.title = this.title;
     task.description = this.description;
     task.completed = this.completed;
     task.category = this.category;
     task.quantity = this.quantity;
+    task.image = this.image;
 
-    this.tasksService.create(task).subscribe((result) => {
+    this.InventoryService.createList(task).subscribe((result) => {
       this.title = '';
       this.description = '';
       this.completed = false;
@@ -56,13 +58,38 @@ export class TasksViewComponent implements OnInit {
     });
   }
 
-  public deleteTask(task: TaskModel): void {
+  public deleteTask(task: InventoryModel): void {
     const response = confirm("Are you sure you want to delete this task?");
     if (response) {
-      this.tasksService.delete(task._id).subscribe(() => {
+      this.InventoryService.deleteList(task._id).subscribe(() => {
         this.getAllTasks();
         this.socketService.publish("tasks_update", {});
       });
     }
   }
+
+  public add(task: InventoryModel): void {
+    task.quantity += 1;
+    this.InventoryService.updateList(task).subscribe(() => {
+      this.getAllTasks();
+      this.socketService.publish("tasks_update", task);
+    });
+  }
+
+  public subtract(task: InventoryModel): void {
+    let quantity = task.quantity;
+    if (quantity == 1) {
+      this.InventoryService.deleteList(task._id).subscribe(() => {
+        this.getAllTasks();
+        this.socketService.publish("tasks_update", {});
+      });
+      return;
+    }
+    task.quantity -= 1;
+    this.InventoryService.updateList(task).subscribe(() => {
+      this.getAllTasks();
+      this.socketService.publish("tasks_update", task);
+    });
+  }
+
 }

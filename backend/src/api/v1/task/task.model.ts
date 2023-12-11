@@ -18,6 +18,7 @@ const taskSchema = new Schema(
     quantity: { type: Number, default: 0 },
     completed: { type: Boolean, default: false },
     category: { type: String, default: 'general' },
+    image: { type: String, default: '' }
   },
   { ...DefaultSchemaOptions }
 );
