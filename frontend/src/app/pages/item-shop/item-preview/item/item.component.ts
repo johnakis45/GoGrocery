@@ -6,9 +6,9 @@ import { InventoryService } from 'src/app/global/services/inventory/inventory.se
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
 
 @Component({
-  selector: 'app-inventory-view',
-  templateUrl: './inventory-view.component.html',
-  styleUrls: ['./inventory-view.component.scss'],
+  selector: 'item-view',
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.scss'],
   animations: [
     trigger('fadeInOut', [
       state('void', style({
@@ -19,7 +19,7 @@ import { ListService } from 'src/app/global/services/tasks/tasks.service';
   ]
 })
 
-export class InventoryViewComponent implements OnInit {
+export class ItemViewComponent implements OnInit {
   public items: InventoryModel[] = [];
   public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';

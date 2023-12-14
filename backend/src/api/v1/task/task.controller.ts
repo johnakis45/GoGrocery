@@ -2,12 +2,24 @@ import { Request, Response, NextFunction, Router } from 'express';
 import { ResourceController } from '../../shared';
 import { StatusCodes } from 'http-status-codes';
 import { Logger } from '../../shared/utils/logger';
-import { InventoryModel,Iinventory } from '../inventory/inventory.model';
-export class TaskController extends ResourceController<Iinventory>{
+import { TaskModel, ITask } from './task.model';
+export class TaskController extends ResourceController<ITask>{
     private logger: Logger = new Logger();
     constructor() {
-        super(InventoryModel);
+        super(TaskModel);
     }
+
+    /**
+ * Get a single task by title
+ * @param title
+ * @returns {Promise<ITask | null>}
+ */
+    findByTitle = async (title: string): Promise<ITask | null> => {
+        const task = TaskModel.findOne({ title }).exec();
+        return task || null; // If task is null (not found), return null
+    };
+
+
     /**
      * Apply all routes for tasks
      *
@@ -18,6 +30,7 @@ export class TaskController extends ResourceController<Iinventory>{
         router
             .get('/', this.getTasks)
             .get('/:id', this.getTaskById)
+            .get('/title/:title', this.getTaskByTitle)
             .post('/', this.postTask)
             .put('/:id', this.updateTask)
             .delete('/:id', this.deleteTask);
@@ -106,5 +119,25 @@ export class TaskController extends ResourceController<Iinventory>{
         return res
             .status(StatusCodes.OK)
             .json(task);
+    }
+
+    getTaskByTitle = async (req: Request, res: Response) => {
+        this.logger.debug('getTaskByTitle request');
+        // you can pre-process the request here before passing it to the super class method
+        try {
+            const task = await this.findByTitle(req.params.title);
+            if (!task) {
+                return res.status(StatusCodes.NOT_FOUND).json({ error: 'Task not found' });
+            }
+
+            // you can process the data retrieved here before returning it to the client
+            return res
+                .status(StatusCodes.OK)
+                .json(task);
+        } catch (error) {
+            // Handle errors appropriately
+            this.logger.error('Error fetching task by title', error);
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Internal server error' });
+        }
     }
 }

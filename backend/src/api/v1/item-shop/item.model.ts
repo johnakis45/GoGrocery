@@ -7,24 +7,19 @@ import { DefaultSchemaOptions } from '../../../models/shared';
 export interface IItem extends Document {
   name: string;
   description: string;
-  image: string;
-  price: number;
-  rating: number;
-  isAvailable: boolean;
-  selected: boolean;
 }
 
 // ------------------------------------------
 // Schema definition
 const itemSchema = new Schema(
   {
-    name: {type: String, required: true},
-    description: {type: String, required: true},
-    image: {type: String, required: true},
-    price: {type: Number, required: true},
-    rating: {type: Number, required: true},
-    isAvailable: {type: Boolean, required: true},
-    selected: {type: Boolean, required: true}
+    title: { type: String, required: true },
+    image: { type: String, default: '' },
+    quantity: { type: Number, default: 0 },
+    price: { type: Number, default: 0 },
+    category: { type: String, default: 'general' },
+    description: { type: String, required: true },
+    completed: { type: Boolean, default: false },
   },
   { ...DefaultSchemaOptions }
 );

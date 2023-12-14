@@ -13,20 +13,15 @@ export interface ITask extends Document {
 // Schema definition
 const taskSchema = new Schema(
   {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
+    title: { type: String, required: true, unique: true },
+    image: { type: String, default: '' },
     quantity: { type: Number, default: 0 },
-    completed: { type: Boolean, default: false },
     category: { type: String, default: 'general' },
-    image: { type: String, default: '' }
+    description: { type: String, required: true },
+    completed: { type: Boolean, default: false },
   },
   { ...DefaultSchemaOptions }
 );
-
-
-
-
-
 
 
 // ------------------------------------------
@@ -34,3 +29,6 @@ const taskSchema = new Schema(
 export const TaskModel: Model<ITask> = model<ITask>(
   'Task', taskSchema, 'Task'
 );
+
+
+
