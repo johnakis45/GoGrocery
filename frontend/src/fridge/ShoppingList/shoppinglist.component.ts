@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
+import { SocketsService } from 'src/fridge/global/services/sockets/sockets.service';
 
 @Component({
-  selector: 'app-inventory',
-  templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss']
+  selector: 'fridge-shoppinglist',
+  templateUrl: './shoppinglist.component.html',
+  styleUrls: ['./shoppinglist.component.scss']
 })
-export class InventoryComponent implements OnInit {
+export class ShoppingListComponent implements OnInit {
 
   constructor(private socketsService: SocketsService) { }
 
