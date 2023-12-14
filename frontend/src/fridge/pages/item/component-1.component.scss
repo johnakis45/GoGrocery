@@ -1,0 +1,122 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  width: 173.3672px;
+  height: 210px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rectangle33 {
+  position: absolute;
+  left: 0;
+  right: 0.2118%;
+  top: 0;
+  bottom: 0;
+  outline: solid 1px #b4b4b4;
+  outline-offset: -1px;
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: 0px 6px 12px 0px #0000;
+}
+.h1 {
+  color: #181725;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  letter-spacing: 0.1px;
+  position: absolute;
+  left: 8.6522%;
+  right: 12.3117%;
+  top: 69.0476%;
+  bottom: 22.381%;
+  height: min-content;
+  flex-direction: column;
+}
+.rectangle63 {
+  position: absolute;
+  left: 4.0377%;
+  right: 6.5567%;
+  top: 80.4762%;
+  bottom: 2.381%;
+  outline: solid 1px #53b175b2;
+  outline-offset: -1px;
+  border-radius: 17px;
+  background-color: #53b175b2;
+}
+.h12 {
+  color: #fff;
+  font-size: 20px;
+  line-height: 18px;
+  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  letter-spacing: 0.1px;
+  position: absolute;
+  left: 36.3391%;
+  right: 38.8581%;
+  top: 84.7619%;
+  bottom: 6.6667%;
+  justify-content: center;
+  flex-direction: column;
+}
+.h2 {
+  color: #000;
+  font-size: 32px;
+  line-height: 18px;
+  font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 54.797%;
+  right: 0;
+  top: 32.8571%;
+  bottom: 60.051%;
+  justify-content: center;
+  flex-direction: column;
+}
+.pngfuel11 {
+  position: absolute;
+  left: 19.6116%;
+  right: 54.7252%;
+  top: 14.7619%;
+  bottom: 42.6842%;
+  background-image: url('/assets/pngfuel11.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

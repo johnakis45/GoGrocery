@@ -1,9 +1,9 @@
-<div class="main-container" (click)="onClick()">
-
-    <div [ngClass]="{'selected': this.self.selected}"></div>
-    <img [src]="this.imagePath + this.self.image">
-    <div class="title-container">
-        <p>{{this.self.name}}</p>
-    </div>
-
-</div>
+<div class="search-bar">
+    <input type="text" class="search-input" placeholder="Find your items" (focus)="onInputFocus($event)"
+      (blur)="onInputBlur($event)" />
+  </div> 
+  
+  <div class="container">
+    <h3>Market</h3>
+    <router-outlet></router-outlet>
+  </div>

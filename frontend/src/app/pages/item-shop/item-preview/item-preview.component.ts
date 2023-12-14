@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ItemModel } from 'src/app/global/models/items/item.model';
+import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 
 @Component({
@@ -13,13 +14,18 @@ export class ItemPreviewComponent implements OnInit {
 
   protected imagePath: string = "\assets\\";
 
-  constructor() { }
+  constructor(private socketsService: SocketsService) { }
 
-  ngOnInit(): void {
+  @Input() selectedCategory: string = '';
 
+  ngOnInit(): void { }
+  isInputFocused: boolean = false;
+
+  onInputFocus(event: FocusEvent): void {
+    this.isInputFocused = true;
   }
 
-  public onClick() {
-    this.clickEmitter.emit(this.self);
+  onInputBlur(event: FocusEvent): void {
+    this.isInputFocused = false;
   }
 }

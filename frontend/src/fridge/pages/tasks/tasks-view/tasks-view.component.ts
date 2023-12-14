@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskModel } from 'src/app/global/models/tasks/task.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
-import { TasksService } from 'src/app/global/services/tasks/tasks.service';
+import { ListService } from 'src/app/global/services/tasks/tasks.service';
 
 @Component({
   selector: 'app-tasks-view',
@@ -17,7 +17,7 @@ export class TasksViewComponent implements OnInit {
   public category: string = 'general';
   public completed: boolean = false;
   constructor(
-    private tasksService: TasksService,
+    private tasksService: ListService,
     private socketService: SocketsService
   ) { }
 
