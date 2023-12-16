@@ -3,6 +3,7 @@ import { ItemModel } from 'src/app/global/models/items/item.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 
+
 @Component({
   selector: 'item-preview',
   templateUrl: './item-preview.component.html',
