@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 @Component({
-  selector: 'app-inventory',
+  selector: 'fridge-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })

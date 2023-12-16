@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ItemShopComponent } from './item-shop/item-shop.component';
+import { InventoryComponent } from './Inventory/inventory.component';
+import { ShoppingListComponent } from './ShoppingList/shoppinglist.component';
 import { FridgeComponent } from './fridge.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect /mobile to /mobile/home
       { path: 'home', component: FridgeComponent },
-      { path: 'item-shop', component: ItemShopComponent }
+      { path: 'item-shop', component: ShoppingListComponent }
       // Add other child routes for mobile module components
     ]
   },
