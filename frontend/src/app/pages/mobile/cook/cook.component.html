@@ -1,13 +1,21 @@
-
-
 <div class="search-bar">
   <input type="text" class="search-input" placeholder="Search recipes" (focus)="onInputFocus($event)"
     (blur)="onInputBlur($event)" />
 </div>
 
-<div class="categories">Categories</div>
-<div class="wrapper">
-  <div  *ngFor="let item of categories" class="item" (click)="selectCategory(item)" [ngStyle]="{'background-color': selectedCategory === item.category ? 'white' : 'white', 'border-color': selectedCategory === item.category ? '#FF7269' : '#fff'}">
+<div class="title">Categories</div>
+<div class="wrapper_c">
+  <div *ngFor="let item of categories" class="category" (click)="selectCategory(item)"
+    [ngStyle]="{'background-color': selectedCategory === item.category ? 'white' : 'white', 'border-color': selectedCategory === item.category ? '#FF7269' : '#fff'}">
+    {{item.title}}
+  </div>
+</div>
+<div class="title">New Dishes</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of dishes" class="dish">
+    <div class="dish-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
     {{item.title}}
   </div>
 </div>

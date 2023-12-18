@@ -32,11 +32,17 @@ export class CookComponent implements OnInit {
     
   ];
 
+  dishes = [
+    { title: '🌭 Sandwich ' ,image: 'assets/shrimp.png',category: "Sandwich" },
+    { title: '🌭 Sandwich ' ,image: 'assets/shrimp.png',category: "Sandwich" },
+    { title: '🌭 Sandwich ' ,image: 'assets/shrimp.png',category: "Sandwich" },
+  ];
+
   selectedCategory: string | null = null;
 
 
   selectCategory(item: any): void {
-    this.selectedCategory = item.category;
+    this.selectedCategory = this.selectedCategory === item.category ? null : item.category;
     console.log(this.selectedCategory);
   }
 

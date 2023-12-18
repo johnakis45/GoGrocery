@@ -32,7 +32,11 @@
               "src/assets/categories",
               "src/assets/nav-bar",
               "src/assets/fonts",
-              "src/assets/fridge"
+              "src/assets/fridge",
+              "src/assets/head-bar",
+              "src/assets/head-bar-phone",
+              "src/assets/nav-bar-phone",
+              "src/assets/dishes"
             ],
             "styles": [
               "src/styles.scss"
@@ -103,7 +107,8 @@
               "src/assets",
               "src/assets/head-bar-phone",
               "src/assets/nav-bar-phone",
-              "src/assets/categories"
+              "src/assets/categories",
+              "src/assets/dishes"
             ],
             "styles": [
               "src/styles.scss"
