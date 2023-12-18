@@ -6,6 +6,8 @@ import { ItemShopComponent } from './item-shop/item-shop.component';
 import { InventoryComponent } from './home/Inventory/inventory.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { MobileComponent } from './mobile.component';
+import { CookComponent } from './cook/cook.component';
+
 
 const routes: Routes = [
   {
@@ -18,6 +20,7 @@ const routes: Routes = [
       { path: 'home/inventory', component: InventoryComponent },
       { path: 'home/inventory/:id', component: InventoryComponent },
       { path: 'tasks', component: TasksComponent }, 
+      { path: 'cook', component: CookComponent }
       // Add other child routes for mobile module components
     ]
   },

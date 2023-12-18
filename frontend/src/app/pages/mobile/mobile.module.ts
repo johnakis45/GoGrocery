@@ -13,6 +13,7 @@ import { InventoryViewComponent } from './home/Inventory/Inventory_view/inventor
 import { CategoryComponent } from './home/category/category.component';
 import { HomeComponent } from './home/home.component';
 import { TasksViewComponent } from './tasks/tasks-view/tasks-view.component';
+import { CookComponent } from './cook/cook.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -25,7 +26,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     InventoryViewComponent,
     CategoryComponent,
     HomeComponent,
-    TasksViewComponent
+    TasksViewComponent,
+    CookComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),

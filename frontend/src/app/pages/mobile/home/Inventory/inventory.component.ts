@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
@@ -10,17 +10,20 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-
+  public id: string = '';
+  public title: string = '';
   private routeSub: Subscription = new Subscription();
-  constructor(private route: ActivatedRoute, private socketsService: SocketsService) { }
+  constructor(private route: ActivatedRoute,
+    private socketsService: SocketsService
+  ) { }
 
   @Input() selectedCategory: string = '';
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params) //log the entire params object
-      console.log(params['id']) //log the value of id
+      this.id = params['id'];
     });
+    this.InitTitle(this.id);
 
   }
   isInputFocused: boolean = false;
@@ -37,4 +40,25 @@ export class InventoryComponent implements OnInit {
     this.routeSub.unsubscribe();
   }
 
+  InitTitle(id: string) {
+    if (id == "Fruits_Vegetables") {
+      this.title = "Fruits & Vegetables";
+    } else if (id == "Cooking_Oils") {
+      this.title = "Cooking Oils";
+    } else if (id == "Meat_Fish") {
+      this.title = "Meat & Fish";
+    } else if (id == "Bakery_Snacks") {
+      this.title = "Bakery & Snacks";
+    } else if (id == "Dairy_Eggs") {
+      this.title = "Dairy & Eggs";
+    } else if (id == "Beverages") {
+      this.title = "Beverages";
+    } else if (id == "Hygiene_Sypplies") {
+      this.title = "Hygiene Sypplies";
+    } else if (id == "Cleaning_Sypplies") {
+      this.title = "Cleaning Sypplies";
+    } else {
+      this.title = "Inventory";
+    }
+  }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { InventoryModel } from '../../models/inventory/inventory.model';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map,tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import * as _ from 'lodash';
 
@@ -23,6 +23,15 @@ export class InventoryService {
       .get<InventoryModel[]>(`${this.hostURl}/api/inventory`)
       .pipe(map(result => _.map(result, (t) => new InventoryModel(t))));
   }
+
+  public getAllInventoryByCategory(cat: string): Observable<InventoryModel[]> {
+    const url = `${this.hostURl}/api/inventory`;
+    return this.http
+    .get<InventoryModel[]>(url)
+    .pipe(map(result => result.filter(item => item.category === cat).map(t => new InventoryModel(t))));
+  }
+
+
 
   public getByIdInventory(id: string): Observable<InventoryModel> {
     return this.http

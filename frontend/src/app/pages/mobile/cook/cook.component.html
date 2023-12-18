@@ -1,0 +1,13 @@
+
+
+<div class="search-bar">
+  <input type="text" class="search-input" placeholder="Search recipes" (focus)="onInputFocus($event)"
+    (blur)="onInputBlur($event)" />
+</div>
+
+<div class="categories">Categories</div>
+<div class="wrapper">
+  <div  *ngFor="let item of categories" class="item" (click)="selectCategory(item)" [ngStyle]="{'background-color': selectedCategory === item.category ? 'white' : 'white', 'border-color': selectedCategory === item.category ? '#FF7269' : '#fff'}">
+    {{item.title}}
+  </div>
+</div>
