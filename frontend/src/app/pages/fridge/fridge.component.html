@@ -16,26 +16,28 @@
 
 <div class="lowQuantity">
     <div class="lowQuantityTitle">Low Quantity</div>
-    <div class="NumLowQuantity">3</div>
+    <div class="NumLowQuantity">{{expired}}</div>
     <div class="RecLowQuantity"></div>
 </div>
 <div class="expiresSoon">
     <div class="expiresSoonTitle">Expires Soon</div>
-    <div class="NumExpiresSoon">2</div>
+    <div class="NumExpiresSoon">{{expires_soon}}</div>
     <div class="RecExpiresSoon"></div>
 </div>
 <div class="expired">
     <div class="expiredTitle">Expired</div>
-    <div class="NumExpired">2</div>
+    <div class="NumExpired">{{expired}}</div>
     <div class="RecExpired"></div>
 </div>
 
 <ul>
-    <li><a class="active inventory" routerLink="/fridge/inventory">Inventory</a></li>
-    <li><a class="shoppingList" routerLink="/fridge/shopping-list">Shopping List</a></li>
+    <li><a class="active inventory" routerLink="/fridge/inventory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inventory</a></li>
+    <li><a class="shoppingList" routerLink="/fridge/shopping-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Shopping List</a></li>
 </ul>
 <!-- <div class="inventory">Inventory</div>
 <div class="shoppingList">Shopping List</div> -->
 <div class="menuLine"></div>
 <div class="microphone"><img src="assets/fridge/microphone.svg" alt="" class="icon" /></div>
+
+<router-outlet></router-outlet>
 

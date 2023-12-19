@@ -115,7 +115,7 @@
   }
 
   .wrapper_d {
-    max-height: 680px;
+    max-height: 500px;
     border: 1px solid #ddd;
     border-style: none;
     display: flex;
@@ -158,7 +158,7 @@
     font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
     width: max-content;
@@ -188,3 +188,53 @@
     
 }
 
+.time {
+  width: min-content;
+  height: min-content;
+  align-items: center;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+  overflow: visible;
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+._Min {
+  color: #686f82;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  padding-left: 25px;
+}
+
+.status {
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  
+}
+._Cook {
+  color: #5DB47D;
+  margin-left: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}

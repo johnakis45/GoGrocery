@@ -26,7 +26,7 @@ export class TasksViewComponent implements OnInit {
     this.getAllTasks();
 
     // Susbcribe to socket event and set callback
-    this.socketService.subscribe("tasks_update", (data: any) => {
+    this.socketService.subscribe("list_update", (data: any) => {
       this.getAllTasks();
     });
   }

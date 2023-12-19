@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     component: FridgeComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect /mobile to /mobile/home
-      { path: 'home', component: FridgeComponent },
-      { path: 'item-shop', component: ShoppingListComponent }
+      { path: '', redirectTo: 'inventory', pathMatch: 'full' }, // Redirect /mobile to /mobile/home
+      { path: 'inventory', component : InventoryComponent},
+      { path: 'shopping-list', component: ShoppingListComponent }
       // Add other child routes for mobile module components
     ]
   },

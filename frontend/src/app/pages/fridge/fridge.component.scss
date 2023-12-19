@@ -317,7 +317,6 @@ svg {
 //INVENTORY AND LIST MENU
   ul li .inventory {
     display: inline-block;
-    color: #000;
     font-size: 64px;
     line-height: 18px;
     font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
@@ -343,7 +342,6 @@ svg {
   }
   ul li .shoppingList {
     display: inline-block;
-    color: #808080;
     font-size: 64px;
     line-height: 18px;
     font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
@@ -367,3 +365,26 @@ svg {
     overflow: visible;
   }
 
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  a.active {
+    color: black;
+  }
+
+  a:not(.active) {
+    color: darkgray;
+  }

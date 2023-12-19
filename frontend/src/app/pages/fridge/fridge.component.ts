@@ -9,9 +9,14 @@ import { Component,HostListener, OnInit } from '@angular/core';
 })
 export class FridgeComponent implements OnInit{
 
+
   ngOnInit(): void {
     
   }
   title = "frontend";
+  
+  expired = 1;
+  expires_soon = 3;
+  low_quantity= 2;
   
 }
