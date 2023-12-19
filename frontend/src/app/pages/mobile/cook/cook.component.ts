@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishCardModel } from 'src/app/global/models/Dish/dish.model';
+import { DishService } from 'src/app/global/services/cook/dish.service';
+import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { TimeService } from 'src/app/global/services/time_service/time-service.service';
 
 @Component({
@@ -12,14 +14,29 @@ export class CookComponent implements OnInit {
   public dishes: DishCardModel[] = [];
   timeOfDay: string = '';
 
-  constructor(private timeService: TimeService) {}
+  constructor(private timeService: TimeService,
+    private dishService: DishService,
+    private socketService: SocketsService,) {}
 
   ngOnInit() {
     this.updateTimeOfDay();
     setInterval(() => {
       this.updateTimeOfDay();
     }, 60000); // Update every minute
+
+    this.getAllDishes();
+    // Susbcribe to socket event and set callback
+    this.socketService.subscribe("inventory_update", (data: any) => {
+      this.getAllDishes();
+    });
   }
+
+  private getAllDishes(): void {
+    this.dishService.getAllDishes().subscribe((result) => {
+      this.dishes = result;
+    });
+  }
+  
 
   private updateTimeOfDay() {
     this.timeOfDay = this.timeService.getTimeOfDay();

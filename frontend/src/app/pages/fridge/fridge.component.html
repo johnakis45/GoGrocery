@@ -31,11 +31,13 @@
 </div>
 
 <ul>
-    <li><a class="active inventory" routerLink="/fridge/inventory">Inventory</a></li>
-    <li><a class="shoppingList" routerLink="/fridge/shopping-list">Shopping List</a></li>
+    <li><a class="active inventory" routerLink="/fridge/inventory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inventory</a></li>
+    <li><a class="shoppingList" routerLink="/fridge/shopping-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Shopping List</a></li>
 </ul>
 <!-- <div class="inventory">Inventory</div>
 <div class="shoppingList">Shopping List</div> -->
 <div class="menuLine"></div>
 <div class="microphone"><img src="assets/fridge/microphone.svg" alt="" class="icon" /></div>
+
+<router-outlet></router-outlet>
 
