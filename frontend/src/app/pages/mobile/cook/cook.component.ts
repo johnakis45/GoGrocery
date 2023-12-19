@@ -26,7 +26,8 @@ export class CookComponent implements OnInit {
 
     this.getAllDishes();
     // Susbcribe to socket event and set callback
-    this.socketService.subscribe("inventory_update", (data: any) => {
+    //if soemone publishes dish_update run the functions
+    this.socketService.subscribe("dish_update", (data: any) => {
       this.getAllDishes();
     });
   }

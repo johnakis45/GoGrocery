@@ -37,6 +37,7 @@ export class InventoryViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInventoryByCategory(this.parentId);
+    console.log(this.parentId);
     // Susbcribe to socket event and set callback
     this.socketService.subscribe("inventory_update", (data: any) => {
       this.getInventoryByCategory(this.parentId);
@@ -70,6 +71,7 @@ export class InventoryViewComponent implements OnInit {
       this.quantity = 0;
       this.category = 'dairy';
       this.socketService.publish("inventory_update", task);
+      this.socketService.publish("list_update", task);
     });
   }
 
@@ -97,7 +99,7 @@ export class InventoryViewComponent implements OnInit {
           this.inventoryService.updateList(item).subscribe(
             () => {
               console.log("Item quantity updated.");
-              this.socketService.publish("tasks_update", item);
+              this.socketService.publish("list_update", item);
             },
             error => {
               console.error("Error updating item quantity:", error);

@@ -24,7 +24,6 @@ export class InventoryComponent implements OnInit {
       this.id = params['id'];
     });
     this.InitTitle(this.id);
-
   }
   isInputFocused: boolean = false;
 
