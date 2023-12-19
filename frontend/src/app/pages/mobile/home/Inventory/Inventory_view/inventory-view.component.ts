@@ -37,7 +37,6 @@ export class InventoryViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInventoryByCategory(this.parentId);
-
     // Susbcribe to socket event and set callback
     this.socketService.subscribe("inventory_update", (data: any) => {
       this.getInventoryByCategory(this.parentId);
