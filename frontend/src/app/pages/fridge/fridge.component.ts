@@ -14,9 +14,10 @@ export class FridgeComponent implements OnInit{
     
   }
   title = "frontend";
-  
+
   expired = 1;
   expires_soon = 3;
   low_quantity= 2;
+  
   
 }
