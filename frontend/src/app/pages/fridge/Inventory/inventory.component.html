@@ -3,4 +3,39 @@
 
 <app-inventory-view></app-inventory-view>
 
-<app-inventory-view></app-inventory-view>
+<!-- <div class="container-fluid py-3">
+    <div class="row">
+      <div class="col-6" *ngFor="let card of cards">
+        <a  style="color : black; text-decoration:none" [ngClass]="{'selected': selectedCategory === card.title}" (click)=" toggleCategory(card.title)">
+          <div class="card" [style.background-color]="card.Backcolor" [style.border-color]="card.color">
+          <div class="card-image">
+            <img class="card-img-top fixed-height-ima" [src]="card.imageUrl" alt="Card image">
+          </div>
+            <div class="card-body" style="white-space: nowrap;">
+              <h5 class="card-title">{{ card.title }}</h5>
+            </div>
+          </div>
+      </a>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="title">Fruits</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of ddishes" class="dish">
+    <div class="dish-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
+    {{item.title}}
+    <div class="time">
+      <div class="group">
+        <div class="_Min">{{item.time}} min</div>
+      </div>
+    </div>
+    <div class="status">
+      <div class="_Cook">
+        {{status}}
+      </div>  
+    </div>
+  </div>
+</div>
