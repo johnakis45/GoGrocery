@@ -14,7 +14,6 @@ export class MobileComponent implements  OnInit{
 
   iconColor: string = 'red';
   
-
   toggleIcon(icon: string): void {
     console.log('Icon clicked:', icon);
     if (this.selectedIcon !== icon) {

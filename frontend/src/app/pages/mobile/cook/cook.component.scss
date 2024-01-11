@@ -123,6 +123,7 @@
     overflow-y: hidden;
     margin-top: -15px;
     margin-left: 10px;
+    padding-bottom: 80px;
   }
 
   .wrapper_c::-webkit-scrollbar {
@@ -170,6 +171,7 @@
     background-color: #fff;
     white-space: nowrap;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    min-width: 40%;
   }
 
   .wrapper_d.dish-img{
@@ -229,6 +231,19 @@
 ._Cook {
   color: #5DB47D;
   margin-left: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+._Missing {
+  color: #FF7269;
+  margin-left: 10px;
   font-size: 15px;
   font-weight: bold;
   font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',

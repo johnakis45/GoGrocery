@@ -23,7 +23,7 @@ const dishSchema = new Schema(
     time: { type: Number, default: 0 },
     category: { type: String, default: 'general' },
     description: { type: String, required: true },
-    status: { type: Boolean, default: false },
+    status: { type: String, default: ''},
     ingredients: { type: [String], default: [] }
 
   },

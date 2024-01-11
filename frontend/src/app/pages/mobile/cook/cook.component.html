@@ -34,7 +34,7 @@
 
 <div class="title">{{timeOfDay}}</div>
 <div class="wrapper_d">
-  <div *ngFor="let item of ddishes" class="dish">
+  <div *ngFor="let item of dishes" class="dish">
     <div class="dish-img">
       <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
     </div>
@@ -45,9 +45,13 @@
       </div>
     </div>
     <div class="status">
-      <div class="_Cook">
-        {{status}}
-      </div>  
+      <div class="_Cook" *ngIf="item.status === 'Cook'">
+        {{item.status}}
+      </div>
+      <div class="_Missing" *ngIf="item.status === 'Missing'" >
+        1 {{item.status}}
+      </div>
     </div>
   </div>
+
 </div>
