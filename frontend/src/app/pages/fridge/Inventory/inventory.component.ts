@@ -10,7 +10,7 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 })
 export class InventoryComponent implements OnInit {
 
-  public status="Inventory";
+  public status="Add";
   public dishes: DishCardModel[] = [];
 
   constructor(
@@ -42,7 +42,7 @@ export class InventoryComponent implements OnInit {
     this.isInputFocused = false;
   }
 
-  ddishes = [
+  inventory = [
     { title: 'Fried Shrimp' ,image: 'assets/shrimp.png',time: "20",category: "Seafood",status : "Cooking" , ingredients : ["Gala","Fish"],info:"Breakfast",description : "Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour. Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s nice and crispy.Serve – Allow the shrimp to "},
     { title: 'Fried Shrimp' ,image: 'assets/shrimp.png',time: "20",category: "Seafood",status : "Cooking",ingredients : ["Gala"],info:"Lunch",description : "Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour. Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s nice and crispy.Serve – Allow the shrimp to "},
     { title: 'Fried Shrimp ' ,image: 'assets/shrimp.png',time: "20",category: "Seafood",status : "Cooking",ingredients : ["Fisaa","Fish"],info:"Dinner",description : "Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour. Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s nice and crispy.Serve – Allow the shrimp to " },
