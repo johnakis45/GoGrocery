@@ -341,8 +341,6 @@ svg {
     justify-content: center;
     flex-direction: column;
     margin-left: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
   }
   .RecExpired {
     display: flex;
@@ -383,9 +381,10 @@ svg {
     width: 5px;
     height: 88px;
     left: 320px;
-    top: 135px;
-    bottom: 8.8747%;
+    top: 165px;
+    //bottom: 8.8747%;
     background-color: #808080;
+    margin-bottom: -20px;
   }
   ul li .shoppingList {
     display: inline-block;
@@ -415,6 +414,7 @@ svg {
   ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: -30px;
   }
 
   li {
