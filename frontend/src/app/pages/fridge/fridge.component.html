@@ -1,34 +1,65 @@
-<div class="weatherNtime">
-    <div class="sun"><img src="assets/fridge/sun.svg" alt="" class="sun" /></div>
-    <div class="time">9:41</div>
-    <div class="weather">20°C Sunny</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="weatherNtime">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="sun"><img src="assets/fridge/sun.svg" alt="" class="sun" /></div>
+                        </div>
+                        <div class="col-8">
+                            <div class="time">9:41</div>
+                            <div class="weather">20°C Sunny</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="leftLine">
+        </div>
+        <div class="col-4">
+            <div class="title">
+                <div><span class="Go">Go</span><span class="Grocery">Grocery</span></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="dayNdate">
+                <div class="day">Monday</div>
+                <div class="date">20 May 2019</div>
+            </div>
+            <hr class="rightLine">
+        </div>
+    </div>
+    
 </div>
 
-<div class="title">
-    <div><span class="Go">Go</span><span class="Grocery">Grocery</span></div>
-</div>
-<div class="dayNdate">
-    <div class="day">Monday</div>
-    <div class="date">20 May 2019</div>
-</div>
-<hr class="leftLine">
-<hr class="rightLine">
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-4"> -->
+            <div class="lowQuantity">
+                <div class="lowQuantityTitle">Low Quantity</div>
+                <div class="NumLowQuantity">{{low_quantity}}</div>
+                <div class="RecLowQuantity"></div>
+            </div>
+        <!-- </div>
+        <div class="col-4"> -->
+            <div class="expiresSoon">
+                <div class="expiresSoonTitle">Expires Soon</div>
+                <div class="NumExpiresSoon">{{expires_soon}}</div>
+                <div class="RecExpiresSoon"></div>
+            </div>
+        <!-- </div>
+        <div class="col-4"> -->
+            <div class="expired">
+                <div class="expiredTitle">Expired</div>
+                <div class="NumExpired">{{expired}}</div>
+                <div class="RecExpired"></div>
+            </div>
+        <!-- </div>
+    </div>
+</div> -->
 
-<div class="lowQuantity">
-    <div class="lowQuantityTitle">Low Quantity</div>
-    <div class="NumLowQuantity">{{low_quantity}}</div>
-    <div class="RecLowQuantity"></div>
-</div>
-<div class="expiresSoon">
-    <div class="expiresSoonTitle">Expires Soon</div>
-    <div class="NumExpiresSoon">{{expires_soon}}</div>
-    <div class="RecExpiresSoon"></div>
-</div>
-<div class="expired">
-    <div class="expiredTitle">Expired</div>
-    <div class="NumExpired">{{expired}}</div>
-    <div class="RecExpired"></div>
-</div>
+
+
 
 <ul>
     <li><a class="active inventory" routerLink="/fridge/inventory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inventory</a></li>
