@@ -8,14 +8,17 @@
 // .top{
 //   margin-top: 00px;
 // }
-
-//cards
-
-.container-fluid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.title{
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 1rem;
 }
+//cards
+// .container-fluid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
 
 .card {
   //width: calc(50% - 30px);
