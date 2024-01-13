@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'home/inventory/:id', component: InventoryComponent },
       { path: 'tasks', component: TasksComponent }, 
       { path: 'cook', component: CookComponent },
-      { path: 'dish', component: DishComponent }
+      { path: 'cook/dish/:id', component: DishComponent }
       // Add other child routes for mobile module components
     ]
   },

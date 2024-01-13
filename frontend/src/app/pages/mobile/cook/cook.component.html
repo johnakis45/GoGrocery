@@ -35,7 +35,7 @@
 <div class="title">{{timeOfDay}}</div>
 <div class="wrapper_d">
   <div *ngFor="let item of dishes" class="dish">
-    <div class="dish-img">
+    <div class="dish-img" routerLink="inventory/{{item._id}}">
       <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
     </div>
     {{item.title}}

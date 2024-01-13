@@ -1,3 +1,5 @@
+
+
 :host,
 * {
   box-sizing: border-box;
@@ -8,12 +10,17 @@
   flex-shrink: 0;
   text-decoration: none;
   min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 :host,
 :not(span, a, ul, ol, li, p) {
   display: flex;
+}
+
+body {
+  margin-bottom: 100px;
+  padding: 0;
+  // font-family: Arial, sans-serif;
 }
 
 @font-face {
@@ -356,24 +363,7 @@ svg {
     white-space: nowrap;
     flex-direction: column;
   }
-  .microphone {
-    position: absolute;
-    left: 84.7671%;
-    right: 12.4567%;
-    top: 360px;
-    //bottom: 100px;
-    overflow: visible;
-  }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin-right: 20px;
-  }
 
   a {
     text-decoration: none;

@@ -61,6 +61,33 @@
   border-radius: 5px;
 }
 
+.title {
+  margin: 20px;
+  align-items: center;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  top: 0;
+  bottom: 0;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+.wrapper_c {
+  max-height: 80px;
+  border: 1px solid #ddd;
+  border-style: none;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: -15px;
+  margin-left: 10px;
+}
+
 .wrapper_d {
   max-height: 500px;
   border: 1px solid #ddd;
