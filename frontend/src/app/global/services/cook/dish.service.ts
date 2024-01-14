@@ -24,5 +24,11 @@ export class DishService {
       .pipe(map(result => _.map(result, (t) => new DishCardModel(t))));
   }
 
+  public getByIdDish(id: string): Observable<DishCardModel> {
+    return this.http
+      .get<DishCardModel>(`${this.hostURl}/api/dishes/${id}`)
+      .pipe(map(result => new DishCardModel(result)));
+  }
+
 
 }

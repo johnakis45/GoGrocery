@@ -23,6 +23,13 @@ export class ItemsService {
       .get<ItemModel[]>(`${this.hostURl}/api/item-shop`)
       .pipe(map(result => _.map(result, (t) => new ItemModel(t))));
   }
+
+  public getById(id: string): Observable<ItemModel> {
+    return this.http
+      .get<ItemModel>(`${this.hostURl}/api/item-shop/${id}`)
+      .pipe(map(result => new ItemModel(result)));
+  }
+  
   public create(resource: ItemModel): Observable<ItemModel> {
     return this.http
       .post<ItemModel>(`${this.hostURl}/api/item-shop`, resource)

@@ -9,6 +9,7 @@ export interface IDish extends Document {
     description: string;
     image: string;
     time: number;
+    kcal: number;
     category: string;
     status: boolean;
     ingredients: string[];

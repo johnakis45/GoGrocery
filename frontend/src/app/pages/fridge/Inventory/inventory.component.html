@@ -1,19 +1,84 @@
 
-<p class="top">HELLOOOOOOOOOOOOO INVENTORY</p>
+<p class="top"></p>
 
 <app-inventory-view></app-inventory-view>
 
-  <div class="title">Fruits</div>
+<div class="title">Fruits</div>
 <div class="wrapper_d">
-  <div *ngFor="let item of inventory" class="dish">
-    <div class="dish-img">
+  <div *ngFor="let item of fruits" class="fruits inventory">
+    <div class="inv-img">
       <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
     </div>
-    {{item.title}}
-    <div class="time">
-      <div class="group">
-        <div class="_Min">{{item.time}} min</div>
-      </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="title">Vegetables</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of vegetables" class="vegetables inventory">
+    <div class="inv-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="title">Meat & Fish</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of meatnfish" class="meatnfish inventory">
+    <div class="inv-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="title">Dairy & Eggs</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of dairy" class="dairy inventory">
+    <div class="inv-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>    
+    <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="title">Drinks</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of drinks" class="drinks inventory">
+    <div class="inv-img">
+      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    </div>
+    <div class="inv-title">
+      {{item.title}}
     </div>
     <div class="status">
       <div class="add">

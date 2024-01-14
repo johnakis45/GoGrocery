@@ -14,8 +14,8 @@ body {
 
 // Remove padding from body to prevent unnecessary space
 header {
-  height: 80px;
-  background-color: #EFEEEE;
+  height: 90px;
+  background-color: #efeeee;
   scroll-behavior: smooth;
   .title {
   .Go{
@@ -39,6 +39,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  padding-bottom: 20px;
   }
   
   .notification{
@@ -125,3 +126,9 @@ header {
 .container {
   padding-bottom: 60px; // Adjust as needed to account for the navbar height
 }
+.header-background {
+  background-color: rgba(239, 238, 238, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(0px); /* Start with no blur */
+  z-index: 1030; /* Ensure the header stays on top of other elements */
+}
+

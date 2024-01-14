@@ -5,6 +5,7 @@ export class DishCardModel {
     public image!: string;
     public time!: number;
     public category!: string;
+    public kcal!: number;
     public info!: string;
     public status!: string;
     public ingredients: string[] = [];

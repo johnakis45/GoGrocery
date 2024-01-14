@@ -1,36 +1,68 @@
-<div class="ellipse4014"><img src="assets/ellipse-4014-icon.svg" alt="" class="icon" /></div>
-<div class="rectangle39385"></div>
-<div class="frame48095700">
-  <div class="vector"><img src="assets/vector-icon.svg" alt="" class="icon2" /></div>
+<div class="unsplashTqOEGdRNowY" [style.backgroundImage]="'url(' + dish.image + ')'"></div>
+
+
+
+
+<div class="row">
+  <div class="col-2">
+
+  </div>
+  <div class="col-8">
+    <img class="card-img-top mx-auto d-block rounded-circle main-img" src="{{dish.image}}" alt="dish">
+        <div class="title">{{dish.title}}</div>
+  <div class="info">{{dish.time}} min</div>
+  <div class="info">{{dish.kcal}} kcal</div>
+  </div>
+  <div class="col-2">
+    
+  </div>
+  
 </div>
-<div class="ellipse4015"><img src="assets/ellipse-4015-icon.svg" alt="" class="icon3" /></div>
-<div class="ellipse4016"><img src="assets/ellipse-4016-icon.svg" alt="" class="icon4" /></div>
-<div class="ellipse40152"><img src="assets/ellipse-4015-icon2.svg" alt="" class="icon5" /></div>
-<div class="unsplashTqOEGdRNowY"></div>
-<div class="frame480957002">
-  <div class="frame48095697"><div class="friedShrimp">Fried Shrimp</div></div>
-  <div class="_20Min">20 min</div>
+
+<div class="row">
+
 </div>
-<div class="_150Kcal">150 kcal</div>
+
+<div class="wrapper_i">
+  <div *ngFor="let item of ingredients" class="item">
+
+      <div class="item-img">
+        <img class="card-img-top" src="{{item.image}}" alt="dish">
+      </div>
+      {{item.title}}
+  </div>
+</div>
+
+
 <div class="frame48095699">
-  <div class="group48095699"><div class="image6"></div></div>
+  <div class="group48095699">
+    <div class="image6"></div>
+  </div>
   <div class="broccoli">Broccoli</div>
 </div>
 <div class="frame48095702">
-  <div class="group480956992"><div class="image12"></div></div>
+  <div class="group480956992">
+    <div class="image12"></div>
+  </div>
   <div class="chili">Chili</div>
   <div class="addToList">Add to list</div>
 </div>
 <div class="frame48095701">
-  <div class="group480956993"><div class="image15"></div></div>
+  <div class="group480956993">
+    <div class="image15"></div>
+  </div>
   <div class="corn">Corn</div>
 </div>
 <div class="frame48095703">
-  <div class="group480956994"><div class="bitmap"></div></div>
+  <div class="group480956994">
+    <div class="bitmap"></div>
+  </div>
   <div class="carrot">Carrot</div>
 </div>
 <div class="frame48095704">
-  <div class="group480956995"><div class="image152"></div></div>
+  <div class="group480956995">
+    <div class="image152"></div>
+  </div>
   <div class="corn2">Corn</div>
 </div>
 <div class="ingredients1Missing">
@@ -63,7 +95,9 @@
           nice and crispy.
         </div>
       </li>
-      <li><div class="textBlock4">Serve – Allow the shrimp to cool a bit and serve!</div></li>
+      <li>
+        <div class="textBlock4">Serve – Allow the shrimp to cool a bit and serve!</div>
+      </li>
     </ol>
   </div>
 </div>
@@ -84,24 +118,34 @@
 <div class="vector2"><img src="assets/vector-icon2.svg" alt="" class="icon7" /></div>
 <div class="_20Min2">20 min</div>
 <div class="frame480956992">
-  <div class="group480956996"><div class="image62"></div></div>
+  <div class="group480956996">
+    <div class="image62"></div>
+  </div>
   <div class="broccoli2">Broccoli</div>
 </div>
 <div class="frame480957022">
-  <div class="group480956997"><div class="image122"></div></div>
+  <div class="group480956997">
+    <div class="image122"></div>
+  </div>
   <div class="chili2">Chili</div>
   <div class="addToList2">Add to list</div>
 </div>
 <div class="frame480957012">
-  <div class="group480956998"><div class="image153"></div></div>
+  <div class="group480956998">
+    <div class="image153"></div>
+  </div>
   <div class="corn3">Corn</div>
 </div>
 <div class="frame480957032">
-  <div class="group480956999"><div class="bitmap2"></div></div>
+  <div class="group480956999">
+    <div class="bitmap2"></div>
+  </div>
   <div class="carrot2">Carrot</div>
 </div>
 <div class="frame480957042">
-  <div class="group4809569910"><div class="image154"></div></div>
+  <div class="group4809569910">
+    <div class="image154"></div>
+  </div>
   <div class="corn4">Corn</div>
 </div>
 <div class="ingredients1Missing2">
@@ -133,7 +177,9 @@
           nice and crispy.
         </div>
       </li>
-      <li><div class="textBlock8">Serve – Allow the shrimp to cool a bit and serve!</div></li>
+      <li>
+        <div class="textBlock8">Serve – Allow the shrimp to cool a bit and serve!</div>
+      </li>
     </ol>
   </div>
 </div>
@@ -154,24 +200,34 @@
 <div class="vector3"><img src="assets/vector-icon3.svg" alt="" class="icon9" /></div>
 <div class="_20Min3">20 min</div>
 <div class="frame480956993">
-  <div class="group4809569911"><div class="image63"></div></div>
+  <div class="group4809569911">
+    <div class="image63"></div>
+  </div>
   <div class="broccoli3">Broccoli</div>
 </div>
 <div class="frame480957023">
-  <div class="group4809569912"><div class="image123"></div></div>
+  <div class="group4809569912">
+    <div class="image123"></div>
+  </div>
   <div class="chili3">Chili</div>
   <div class="addToList3">Add to list</div>
 </div>
 <div class="frame480957013">
-  <div class="group4809569913"><div class="image155"></div></div>
+  <div class="group4809569913">
+    <div class="image155"></div>
+  </div>
   <div class="corn5">Corn</div>
 </div>
 <div class="frame480957033">
-  <div class="group4809569914"><div class="bitmap3"></div></div>
+  <div class="group4809569914">
+    <div class="bitmap3"></div>
+  </div>
   <div class="carrot3">Carrot</div>
 </div>
 <div class="frame480957043">
-  <div class="group4809569915"><div class="image156"></div></div>
+  <div class="group4809569915">
+    <div class="image156"></div>
+  </div>
   <div class="corn6">Corn</div>
 </div>
 <div class="ingredients1Missing3">
@@ -204,7 +260,9 @@
           nice and crispy.
         </div>
       </li>
-      <li><div class="textBlock12">Serve – Allow the shrimp to cool a bit and serve!</div></li>
+      <li>
+        <div class="textBlock12">Serve – Allow the shrimp to cool a bit and serve!</div>
+      </li>
     </ol>
   </div>
 </div>

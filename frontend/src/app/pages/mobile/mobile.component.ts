@@ -24,6 +24,24 @@ export class MobileComponent implements  OnInit{
   }
 
   ngOnInit(): void {
+    window.addEventListener('scroll', this.scrollEvent, true);
     console.log('App component initialized');
+  }
+
+  scrollEvent = (event: any): void => {
+    const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const header = document.querySelector('.header-background') as HTMLElement;
+    const scrolled = document.querySelector('.scrolled') as HTMLElement;
+
+    if (number > 0 && header !== null) {
+      header.classList.add('scrolled');
+    } else if (header !== null) {
+      header.classList.remove('scrolled');
+    }
+
+    if (scrolled !== null && header !== null) {
+      const blur = Math.min(10, number / 10); // Adjust the divisor to change the speed of the blur effect
+      scrolled.style.backdropFilter = `blur(${blur}px)`;
+    }
   }
 }

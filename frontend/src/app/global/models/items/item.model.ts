@@ -1,6 +1,6 @@
 export class ItemModel {
 
-  public name!: string;
+  public title!: string;
   public description!: string;
   public image!: string;
   public price!: number;
