@@ -9,7 +9,7 @@
 //   margin-top: 00px;
 // }
 .title{
-  font-size: 45px;
+  font-size: 40px;
   font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif;
   margin-left: 20px;
@@ -67,32 +67,32 @@
 //   border-radius: 5px;
 // }
 
-.title {
-  margin: 20px;
-  align-items: center;
-  color: #000;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
-  top: 0;
-  bottom: 0;
-  width: min-content;
-  height: min-content;
-  white-space: nowrap;
-  flex-direction: column;
-}
+// .title {
+//   margin: 20px;
+//   align-items: center;
+//   color: #000;
+//   font-size: 20px;
+//   font-weight: 500;
+//   font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+//     'Liberation Sans', sans-serif;
+//   top: 0;
+//   bottom: 0;
+//   width: min-content;
+//   height: min-content;
+//   white-space: nowrap;
+//   flex-direction: column;
+// }
 
-.wrapper_c {
-  max-height: 80px;
-  border: 1px solid #ddd;
-  border-style: none;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin-top: -15px;
-  margin-left: 10px;
-}
+// .wrapper_c {
+//   max-height: 80px;
+//   border: 1px solid #ddd;
+//   border-style: none;
+//   display: flex;
+//   overflow-x: auto;
+//   overflow-y: hidden;
+//   margin-top: -15px;
+//   margin-left: 10px;
+// }
 
 .wrapper_d {
   //max-height: 500px;
@@ -118,7 +118,7 @@
   padding-bottom: 10px;
   padding-left: 50px;
   padding-right: 50px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid #fff; 
   //height: min-content;
   //width:230px;
@@ -136,19 +136,28 @@
     // padding-top: 4px;
     margin-left: auto;
     margin-right: auto;
-    // margin-right: 30px;
-    // margin-bottom: 20px;
-    // margin-top: 15px;
+    margin-bottom: auto;
+    margin-top: auto;
     //display: inline-block;
     //max-width: 100%;  // Ensure the image doesn't exceed the container width
     //min-height: 200px;
     //height: min-content;
     //height: 100px;
-    width: 100px; 
+    width: 200px;
+    height: 120px;
     object-fit: contain;
   }
 }
 
+.wrapper_d{
+  .inv-qnt{
+    font-size: 38px;
+    font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+      margin-top: auto;
+      //margin-bottom: auto;
+  }
+}
 .wrapper_d{
   .inv-title{
     font-size: 30px;

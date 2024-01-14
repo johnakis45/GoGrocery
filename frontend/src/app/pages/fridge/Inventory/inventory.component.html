@@ -6,84 +6,119 @@
 <div class="title">Fruits</div>
 <div class="wrapper_d">
   <div *ngFor="let item of fruits" class="fruits inventory">
-    <div class="inv-img">
-      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
     </div>
     <div class="inv-title">
       {{item.title}}
     </div>
-    <div class="status">
+    <!-- <div class="status">
       <div class="add">
         {{status}}
       </div>  
-    </div>
+    </div> -->
   </div>
 </div>
 
 <div class="title">Vegetables</div>
 <div class="wrapper_d">
   <div *ngFor="let item of vegetables" class="vegetables inventory">
-    <div class="inv-img">
-      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
     </div>
     <div class="inv-title">
       {{item.title}}
     </div>
-    <div class="status">
+    <!-- <div class="status">
       <div class="add">
         {{status}}
       </div>  
-    </div>
+    </div> -->
   </div>
 </div>
 
 <div class="title">Meat & Fish</div>
 <div class="wrapper_d">
   <div *ngFor="let item of meatnfish" class="meatnfish inventory">
-    <div class="inv-img">
-      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
     </div>
     <div class="inv-title">
       {{item.title}}
     </div>
-    <div class="status">
+    <!-- <div class="status">
       <div class="add">
         {{status}}
       </div>  
-    </div>
+    </div> -->
   </div>
 </div>
 
 <div class="title">Dairy & Eggs</div>
 <div class="wrapper_d">
   <div *ngFor="let item of dairy" class="dairy inventory">
-    <div class="inv-img">
-      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
     </div>
     <div class="inv-title">
       {{item.title}}
     </div>    
-    <div class="status">
+    <!-- <div class="status">
       <div class="add">
         {{status}}
       </div>  
-    </div>
+    </div> -->
   </div>
 </div>
 
 <div class="title">Drinks</div>
 <div class="wrapper_d">
   <div *ngFor="let item of drinks" class="drinks inventory">
-    <div class="inv-img">
-      <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
     </div>
     <div class="inv-title">
       {{item.title}}
     </div>
-    <div class="status">
+    <!-- <div class="status">
       <div class="add">
         {{status}}
       </div>  
-    </div>
+    </div> -->
   </div>
 </div>
