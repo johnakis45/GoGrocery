@@ -39,6 +39,7 @@ export class InventoryService {
       .pipe(map(result => new InventoryModel(result)));
   }
 
+
   public createInventory(resource: InventoryModel): Observable<InventoryModel> {
     return this.http
       .post<InventoryModel>(`${this.hostURl}/api/inventory`, resource)

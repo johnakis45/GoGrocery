@@ -107,5 +107,5 @@ export class InventoryController extends ResourceController<Iinventory>{
             .status(StatusCodes.OK)
             .json(task);
     }
-    
+
 }
