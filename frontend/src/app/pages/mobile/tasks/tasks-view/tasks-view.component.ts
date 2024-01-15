@@ -54,7 +54,7 @@ export class TasksViewComponent implements OnInit {
       this.title = '';
       this.description = '';
       this.completed = false;
-      this.socketService.publish("tasks_update", task);
+      this.socketService.publish("list_update", task);
     });
   }
 
@@ -63,7 +63,7 @@ export class TasksViewComponent implements OnInit {
     if (response) {
       this.InventoryService.deleteList(task._id).subscribe(() => {
         this.getAllTasks();
-        this.socketService.publish("tasks_update", {});
+        this.socketService.publish("list_update", {});
       });
     }
   }
@@ -72,7 +72,7 @@ export class TasksViewComponent implements OnInit {
     task.quantity += 1;
     this.InventoryService.updateList(task).subscribe(() => {
       this.getAllTasks();
-      this.socketService.publish("tasks_update", task);
+      this.socketService.publish("list_update", task);
     });
   }
 
@@ -81,14 +81,14 @@ export class TasksViewComponent implements OnInit {
     if (quantity == 1) {
       this.InventoryService.deleteList(task._id).subscribe(() => {
         this.getAllTasks();
-        this.socketService.publish("tasks_update", {});
+        this.socketService.publish("list_update", {});
       });
       return;
     }
     task.quantity -= 1;
     this.InventoryService.updateList(task).subscribe(() => {
       this.getAllTasks();
-      this.socketService.publish("tasks_update", task);
+      this.socketService.publish("list_update", task);
     });
   }
 

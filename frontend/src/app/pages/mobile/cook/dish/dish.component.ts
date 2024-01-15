@@ -11,6 +11,8 @@ import { InventoryService } from 'src/app/global/services/inventory/inventory.se
 import { ItemsService } from 'src/app/global/services/item-shop/item-shop.service';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'dish-cook',
@@ -34,7 +36,8 @@ export class DishComponent implements OnInit {
     private dishService: DishService,
     private itemService: ItemsService,
     private inventoryService: InventoryService,
-    private ListService: ListService
+    private ListService: ListService,
+    private location: Location
   ) { }
 
 
@@ -172,6 +175,9 @@ addMissingItems() {
     for (const element of this.missing_items) {
       await this.addItem(element);
     }
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
   
 }
