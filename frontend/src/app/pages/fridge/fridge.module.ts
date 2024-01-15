@@ -7,13 +7,17 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { environment } from 'src/environments/environment';
 import { InventoryComponent } from './Inventory/inventory.component';
 import { InventoryViewComponent } from './Inventory/Inventory_view/inventory-view.component';
+import { ShoppingListViewComponent } from './ShoppingList/ShoppingList_view/shoppinglist-view.component';
+import { ShoppingListComponent } from './ShoppingList/shoppinglist.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
   declarations: [
     FridgeComponent,
     InventoryViewComponent,
-    InventoryComponent
+    InventoryComponent,
+    ShoppingListViewComponent,
+    ShoppingListComponent,
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
