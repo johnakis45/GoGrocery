@@ -1,3 +1,8 @@
 <div class="container">
-    <fridge-shoppinglist-view></fridge-shoppinglist-view>
+    <div class="container-fluid py-3">
+        <div class="row">
+            <div [class]="getColClass(shopping_list.length)" *ngFor="let item of shopping_list">
+                <fridge-shoppinglist-view [Item]="item"></fridge-shoppinglist-view>
+              </div>
+        </div>  
 </div>

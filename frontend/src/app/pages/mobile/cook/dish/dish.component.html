@@ -1,268 +1,34 @@
-<div class="unsplashTqOEGdRNowY" [style.backgroundImage]="'url(' + dish.image + ')'"></div>
-
-
-
-
-<div class="row">
-  <div class="col-2">
-
-  </div>
-  <div class="col-8">
-    <img class="card-img-top mx-auto d-block rounded-circle main-img" src="{{dish.image}}" alt="dish">
-        <div class="title">{{dish.title}}</div>
+<div class="center-content">
+  <img class="card-img-top mx-auto d-block rounded-circle main-img" src="{{dish.image}}" alt="dish">
+  <div class="title">{{dish.title}}</div>
   <div class="info">{{dish.time}} min</div>
   <div class="info">{{dish.kcal}} kcal</div>
-  </div>
-  <div class="col-2">
-    
-  </div>
-  
 </div>
 
-<div class="row">
 
+<div class="ingredients-header">
+  <span class="title">Ingredients</span>
+  <span *ngIf="missing_items.length > 0" class="missing">Missing - {{missing_items.length}}</span>
+  <span class="total">Total - {{ingredients.length}}</span>
 </div>
 
 <div class="wrapper_i">
-  <div *ngFor="let item of ingredients" class="item">
-
-      <div class="item-img">
-        <img class="card-img-top" src="{{item.image}}" alt="dish">
-      </div>
-      {{item.title}}
-  </div>
-</div>
-
-
-<div class="frame48095699">
-  <div class="group48095699">
-    <div class="image6"></div>
-  </div>
-  <div class="broccoli">Broccoli</div>
-</div>
-<div class="frame48095702">
-  <div class="group480956992">
-    <div class="image12"></div>
-  </div>
-  <div class="chili">Chili</div>
-  <div class="addToList">Add to list</div>
-</div>
-<div class="frame48095701">
-  <div class="group480956993">
-    <div class="image15"></div>
-  </div>
-  <div class="corn">Corn</div>
-</div>
-<div class="frame48095703">
-  <div class="group480956994">
-    <div class="bitmap"></div>
-  </div>
-  <div class="carrot">Carrot</div>
-</div>
-<div class="frame48095704">
-  <div class="group480956995">
-    <div class="image152"></div>
-  </div>
-  <div class="corn2">Corn</div>
-</div>
-<div class="ingredients1Missing">
-  <p class="labelWrapper">
-    <span class="label">Ingredients -</span>
-    <span class="label2">1 missing</span>
-  </p>
-</div>
-<div class="recipe">Recipe</div>
-<div class="_7Items">7 items</div>
-<div class="frame48095728">
-  <div class="soakTheShrimpInALargeBowlMixTo">
-    <ol class="list">
-      <li>
-        <div class="textBlock">
-          Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the
-          granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock2">
-          Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining
-          spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour.
-          Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock3">
-          Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s
-          nice and crispy.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock4">Serve – Allow the shrimp to cool a bit and serve!</div>
-      </li>
-    </ol>
-  </div>
-</div>
-<div class="image52"></div>
-<div class="image53"></div>
-<div class="ellipse4018"><img src="assets/ellipse-4018-icon.svg" alt="" class="icon6" /></div>
-<div class="unsplashTqOEGdRNowY2"></div>
-<div class="frame48095731">
-  <div class="frame480956972">
-    <div class="friedShrimp2">Fried Shrimp</div>
-    <div class="thisIsMyKindOfBreakfastEggSand">
-      This is my kind of breakfast egg sandwich and it takes under 5 minutes to make
+  <div *ngFor="let item of ingredients" 
+       [ngClass]="{'missing': missing_items.includes(item), 'available': !missing_items.includes(item), 'shopping': shopping_items.includes(item)}" 
+       class="item">
+    <img class="card-img item-img" src="{{item.image}}" alt="dish">
+    <div class="text">{{item.title}}</div>
+    <div *ngIf="missing_items.includes(item)">
+      <button (mousedown)="addItem(item)" >Add</button>
     </div>
   </div>
 </div>
-<div class="unsplashZuIDLSz3XLg"></div>
-<div class="_150Kcal2">150 kcal</div>
-<div class="vector2"><img src="assets/vector-icon2.svg" alt="" class="icon7" /></div>
-<div class="_20Min2">20 min</div>
-<div class="frame480956992">
-  <div class="group480956996">
-    <div class="image62"></div>
+<a *ngIf="missing_items.length > 0" 
+     [class]="isAdded ? 'added' : 'missing'" 
+     (click)="AddAllMissingItems()">{{isAdded ? 'Ingredients Added' : 'Add All Missing'}}</a>
+  <div class="subtitle">
+    Recipe
   </div>
-  <div class="broccoli2">Broccoli</div>
-</div>
-<div class="frame480957022">
-  <div class="group480956997">
-    <div class="image122"></div>
-  </div>
-  <div class="chili2">Chili</div>
-  <div class="addToList2">Add to list</div>
-</div>
-<div class="frame480957012">
-  <div class="group480956998">
-    <div class="image153"></div>
-  </div>
-  <div class="corn3">Corn</div>
-</div>
-<div class="frame480957032">
-  <div class="group480956999">
-    <div class="bitmap2"></div>
-  </div>
-  <div class="carrot2">Carrot</div>
-</div>
-<div class="frame480957042">
-  <div class="group4809569910">
-    <div class="image154"></div>
-  </div>
-  <div class="corn4">Corn</div>
-</div>
-<div class="ingredients1Missing2">
-  <p class="labelWrapper2">
-    <span class="label3">Ingredients -</span>
-    <span class="label4">1 missing</span>
-  </p>
-</div>
-<div class="recipe2">Recipe</div>
-<div class="frame48095732">
-  <div class="soakTheShrimpInALargeBowlMixTo2">
-    <ol class="list2">
-      <li>
-        <div class="textBlock5">
-          Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the
-          granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock6">
-          Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining
-          spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour.
-          Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock7">
-          Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s
-          nice and crispy.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock8">Serve – Allow the shrimp to cool a bit and serve!</div>
-      </li>
-    </ol>
-  </div>
-</div>
-<div class="image50"></div>
-<div class="image51"></div>
-<div class="ellipse4017"><img src="assets/ellipse-4017-icon.svg" alt="" class="icon8" /></div>
-<div class="unsplashTqOEGdRNowY3"></div>
-<div class="frame48095729">
-  <div class="frame480956973">
-    <div class="friedShrimp3">Fried Shrimp</div>
-    <div class="thisIsMyKindOfBreakfastEggSand2">
-      This is my kind of breakfast egg sandwich and it takes under 5 minutes to make
-    </div>
-  </div>
-</div>
-<div class="unsplashZuIDLSz3XLg2"></div>
-<div class="_150Kcal3">150 kcal</div>
-<div class="vector3"><img src="assets/vector-icon3.svg" alt="" class="icon9" /></div>
-<div class="_20Min3">20 min</div>
-<div class="frame480956993">
-  <div class="group4809569911">
-    <div class="image63"></div>
-  </div>
-  <div class="broccoli3">Broccoli</div>
-</div>
-<div class="frame480957023">
-  <div class="group4809569912">
-    <div class="image123"></div>
-  </div>
-  <div class="chili3">Chili</div>
-  <div class="addToList3">Add to list</div>
-</div>
-<div class="frame480957013">
-  <div class="group4809569913">
-    <div class="image155"></div>
-  </div>
-  <div class="corn5">Corn</div>
-</div>
-<div class="frame480957033">
-  <div class="group4809569914">
-    <div class="bitmap3"></div>
-  </div>
-  <div class="carrot3">Carrot</div>
-</div>
-<div class="frame480957043">
-  <div class="group4809569915">
-    <div class="image156"></div>
-  </div>
-  <div class="corn6">Corn</div>
-</div>
-<div class="ingredients1Missing3">
-  <p class="labelWrapper3">
-    <span class="label5">Ingredients -</span>
-    <span class="label6">1 missing</span>
-  </p>
-</div>
-<div class="recipe3">Recipe</div>
-<div class="_7Items2">7 items</div>
-<div class="frame48095730">
-  <div class="soakTheShrimpInALargeBowlMixTo3">
-    <ol class="list3">
-      <li>
-        <div class="textBlock9">
-          Soak the shrimp – In a large bowl, mix together the milk, ½ teaspoon salt, the black pepper, half the
-          granulated garlic, half the paprika, and half of the oregano. Add in the shrimp and let soak for 10 minutes.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock10">
-          Coat the shrimp – Once the shrimp is finished soaking, shake free of excess milk. Mix together the remaining
-          spices and flour on a plate and coat the shrimp well. Make sure you coat the shrimp really well with flour.
-          Coat them several times with the seasoned flour. You should not be able to see the shrimp under the flour.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock11">
-          Fry the shrimp – Heat the oil to 375 degrees and fry each batch of shrimp for about 1-2 minutes or until it’s
-          nice and crispy.
-        </div>
-      </li>
-      <li>
-        <div class="textBlock12">Serve – Allow the shrimp to cool a bit and serve!</div>
-      </li>
-    </ol>
-  </div>
+<div class="description" style="overflow-y: auto; height: 200px; /* Adjust as needed */">
+  {{dish.description}} 
 </div>

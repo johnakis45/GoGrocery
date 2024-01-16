@@ -8,8 +8,8 @@
                             <div class="sun"><img src="assets/fridge/sun.svg" alt="" class="sun" /></div>
                         </div>
                         <div class="col-8">
-                            <div class="time">9:41</div>
-                            <div class="weather">20°C Sunny</div>
+                            <div class="time">{{ currentDate | date:'shortTime' }}</div>
+                            <div class="weather">{{ weather }}°C</div>
                         </div>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
         </div>
         <div class="col-4">
             <div class="dayNdate">
-                <div class="day">Monday</div>
-                <div class="date">20 May 2019</div>
+                <div class="day">{{currentDate | date:'EEEE'}}</div>
+                <div class="date">{{currentDate | date:'dd MMMM yyyy'}}</div>
             </div>
             <hr class="rightLine">
         </div>

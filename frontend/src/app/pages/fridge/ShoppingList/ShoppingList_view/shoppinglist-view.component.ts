@@ -4,6 +4,7 @@ import { InventoryModel } from 'src/app/global/models/inventory/inventory.model'
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
+import { TaskModel } from 'src/app/global/models/tasks/task.model';
 
 @Component({
   selector: 'fridge-shoppinglist-view',
@@ -20,6 +21,7 @@ import { ListService } from 'src/app/global/services/tasks/tasks.service';
 })
 
 export class ShoppingListViewComponent implements OnInit {
+  @Input() Item: TaskModel = new TaskModel();
  public items: InventoryModel[] = [];
   public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';
@@ -37,15 +39,7 @@ export class ShoppingListViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  itemss=[
-    { title: "Gala",image: "assets/fridge/fruits/apple.png",quantity: 13,},
-    { title: "Gala",image: "assets/fridge/fruits/apple.png",quantity: 13,},
-    { title: "Gala",image: "assets/fridge/fruits/apple.png",quantity: 13,},    
-    { title: "Gala",image: "assets/fridge/fruits/apple.png",quantity: 13,},
-    { title: "Gala",image: "assets/fridge/fruits/apple.png",quantity: 13,},
 
-
-  ]
 
   private getInventoryByCategory(cat: string): void {
     this.inventoryService.getAllInventoryByCategory(cat).subscribe((result) => {

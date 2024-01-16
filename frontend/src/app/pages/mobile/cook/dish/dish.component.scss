@@ -7,7 +7,7 @@
   overflow-y: hidden;
   margin-top: -15px;
   margin-left: 10px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 }
 
 .wrapper_i::-webkit-scrollbar {
@@ -26,25 +26,43 @@
 .wrapper_i .item {
   font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
   'Liberation Sans', sans-serif;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: max-content;
-  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
   border: 1px solid #fff; 
-  height: min-content;
+  //height: min-content;
   margin: 5px;
   border-radius: 10px;
   background-color: #fff;
-  white-space: nowrap;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  min-width: 28%;
-  max-width: 10%;
-  display: flex; /* Add this */
-  justify-content: center; /* Add this */
-  align-items: center; /* Add this */
+  min-width: 100px;
+  width: 150px; /* Fixed width */
+  height: 110px; /* Fixed height */
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center; /* Center the children vertically */
+  color: white;
+  text-overflow: ellipsis; /* Show '...' for overflowed content */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+.wrapper_i .missing {
+  border: 2px solid rgba(244, 110, 101, 1); /* Default border color */
+  background-color: rgba(244, 110, 101, 0.7); /* Default background color */
+}
+
+.wrapper_i .available {
+  border: 2px solid rgba(83, 177, 117, 1); /* Default border color */
+  background-color: rgba(83, 177, 117, 0.7); /* Default background color */
+}
+
+.wrapper_i .shopping {
+  border: 2px solid rgb(83, 117, 177); /* Default border color */
+  background-color: rgba(83, 99, 177, 0.7); /* Default background color */
 }
 
 .wrapper_i.item-img{
@@ -57,19 +75,25 @@
   display: inline-block;
   //max-width: 100%;  // Ensure the image doesn't exceed the container width
   //height: 100%;
-  width: 100%; 
+  width: 80%; 
   height: 70px;     // Maintain aspect ratio
   object-fit: contain;
   height: auto;
+  margin-bottom: auto;
   
 }
 
-.row {
+.wrapper_i .item .text {
+  margin-top: auto; /* Push the text down */
+}
+
+.center-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  text-align: center; /* Align the text to the center */
+  margin-bottom: 38px;
 }
 
 .info {
@@ -94,3 +118,66 @@
   height: min-content;
 }
 
+.subtitle {
+  margin:20px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: DM Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+
+.description {
+  // ... existing styles ...
+ margin: 20px;
+ margin-bottom: 80px;
+}
+
+
+button {
+  border-radius: 20px; /* Adjust as needed */
+  border: 2px solid rgba(244, 110, 101, 1); /* Default border color */
+  background-color: rgba(252, 17, 1, 0.7); /* Default background color */
+  color: white; /* Adjust as needed */
+  padding: 1px 30px; /* Adjust as needed */
+  text-decoration: none;
+  font-size: 16px; /* Adjust as needed */
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: darkred; /* Adjust as needed */
+  color: white;
+}
+
+
+.missing {
+  color: red !important;
+  float: right;
+  margin-right: 20px;
+}
+
+.added {
+  color: green !important;
+  float: right;
+  margin-right: 20px;
+}
+
+
+.ingredients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  /* Add more styles as needed */
+}
+
+.ingredients-header .missing {
+  color: red;
+  /* Add more styles as needed */
+}
+
+.ingredients-header .total {
+  /* Add styles as needed */
+}
