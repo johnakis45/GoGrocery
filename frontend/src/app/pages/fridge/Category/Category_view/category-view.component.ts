@@ -4,12 +4,12 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 
 @Component({
-  selector: 'app-inventory-view',
-  templateUrl: './inventory-view.component.html',
-  styleUrls: ['./inventory-view.component.scss']
+  selector: 'app-category-view',
+  templateUrl: './category-view.component.html',
+  styleUrls: ['./category-view.component.scss']
 })
 
-export class InventoryViewComponent implements OnInit {
+export class CategoryViewComponent implements OnInit {
   @Input() items: InventoryModel[] = [];
   @Input() category: string = '';
 

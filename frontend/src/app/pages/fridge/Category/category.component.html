@@ -1,0 +1,6 @@
+
+<div class="i" style="height: 1400px; overflow: auto;">
+    <div *ngFor="let array of getCategories()" class="inventory">
+      <app-category-view [category]="array.category" [items]="array.items"></app-category-view>
+    </div>
+  </div>

@@ -7,21 +7,16 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
 
 @Component({
-  selector: 'fridge-inventory',
-  templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss']
+  selector: 'fridge-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.scss']
 })
-export class InventoryComponent implements OnInit {
+export class CategoryComponent implements OnInit {
   public items: InventoryModel[] = [];
 
-  public fruits: InventoryModel[] = [];
-  public vegetables: InventoryModel[] = [];
-  public oils: InventoryModel[] = [];
-  public meatnfish: InventoryModel[] = [];
-  public dairy: InventoryModel[] = [];
-  public bakery: InventoryModel[] = [];
-  public beverages: InventoryModel[] = [];
-  public other: InventoryModel[] = [];
+  public expired: InventoryModel[] = [];
+  public expiresSoon: InventoryModel[] = [];
+  public low: InventoryModel[] = [];
 
   constructor(
     private dishService: DishService,
@@ -44,59 +39,35 @@ export class InventoryComponent implements OnInit {
     });
   }
 
-  getNonEmptyArrays(): { category: string, items: InventoryModel[] }[] {
+
+  getCategories(): { category: string, items: InventoryModel[] }[] {
     const arrays = [
-      { category: 'Fruits', items: this.fruits },
-      { category: 'Vegetables', items: this.vegetables },
-      { category: 'Oils', items: this.oils },
-      { category: 'Meat & Fish', items: this.meatnfish },
-      { category: 'Dairy & Eggs', items: this.dairy },
-      { category: 'Bakery', items: this.bakery },
-      { category: 'Beverages', items: this.beverages },
-      { category: 'Other', items: this.other }
-    ];
+        { category: 'Expired', items: this.expired },
+        { category: 'Expires Soon', items: this.expiresSoon },
+        { category: 'Low Quantity', items: this.low }
+      ];
     return arrays.filter(array => array.items.length > 0);
   }
 
-
-
-  sortItemsByCategory(): void {
-    // Assuming you have these arrays for each category
-    // Add more categories as needed
-
+sortItemsByCategory(): void {
     this.items.forEach(item => {
-      if (item.place == "Fridge") {
-        switch (item.category) {
-          case 'Fruits_Vegetables':
-            if(item.subcategory == "Fruits"){
-              this.fruits.push(item);
-            }else{
-              this.vegetables.push(item);
-            }
-            break;
-          case 'Cooking_Oils':
-            this.oils.push(item);
-            break;
-          case 'Meat_Fish':
-            this.meatnfish.push(item);
-            break;
-          case 'Dairy_Eggs':
-            this.dairy.push(item);
-            break;
-          case 'Bakery_Snacks':
-            this.bakery.push(item);
-            break;
-          case 'Beverages':
-            this.beverages.push(item);
-            break;
-          default:
-            this.other.push(item);
-            console.log(`Item ${item.title} has an unknown category ${item.category}`);
-        }
-      }
-    });
+        if (item.place == "Fridge") {
+            const expirationDate = new Date(item.expiration_date);
+            const now = new Date();
+            const diffInDays = Math.ceil((expirationDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 
-  }
+            if (diffInDays < 0) {
+                this.expired.push(item);
+            } else if (diffInDays <= 4) {
+                this.expiresSoon.push(item);
+            }
+
+            if (item.quantity === 1) {
+                this.low.push(item);
+            }
+        }
+    });
+}
 
   isInputFocused: boolean = false;
 
