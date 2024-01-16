@@ -6,12 +6,26 @@
                 <div class="card-image">
                     <img class="card-img-top fixed-height-ima " [src]="item.image" alt="Item image">  
                 </div>
-                <div class="quantity">x {{item.quantity}}</div>
                 <div class="card-body" style="white-space: nowrap;"></div>
                 <h2 class="card-title">{{ item.title }} </h2>
                 <div class="btn_br">
                     <div class="add" (click)="addItem(item.image, item.title, item.quantity,item.description,item.category)">Add</div>
                     <div class="added" *ngIf="isAdded">Added</div>                   
+                </div>
+            </div>
+        </div>
+        <div class=" col-6" style="visibility: hidden;">
+            <div style="display: none;"></div>
+            <div class="card">
+                <div class="card-image">
+                    <img class="card-img-top fixed-height-ima " alt="Item image">  
+                </div>
+                <div class="quantity">x </div>
+                <div class="card-body" style="white-space: nowrap;"></div>
+                <h2 class="card-title"></h2>
+                <div class="btn_br">
+                    <div class="add"></div>
+                    <div class="added" ></div>                   
                 </div>
             </div>
         </div>

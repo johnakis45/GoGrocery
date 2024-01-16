@@ -8,6 +8,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { MobileComponent } from './mobile.component';
 import { CookComponent } from './cook/cook.component';
 import { DishComponent } from './cook/dish/dish.component';
+import { ItemPreviewComponent } from './item-shop/item-preview/item-preview.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect /mobile to /mobile/home
       { path: 'home', component: HomeComponent },
       { path: 'item-shop', component: ItemShopComponent },
+      { path: 'item-shop/item-preview', component: ItemShopComponent},
+      { path: 'item-shop/item-preview/:id', component: ItemPreviewComponent},
       { path: 'home/inventory', component: InventoryComponent },
       { path: 'home/inventory/:id', component: InventoryComponent },
       { path: 'tasks', component: TasksComponent }, 

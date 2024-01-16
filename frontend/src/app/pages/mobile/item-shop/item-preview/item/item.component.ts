@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
@@ -20,27 +20,33 @@ import { ListService } from 'src/app/global/services/tasks/tasks.service';
 })
 
 export class ItemViewComponent implements OnInit {
+  @Input() parentId: string = '';
   public items: InventoryModel[] = [];
   public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';
   public quantity: number = 0;
-  public category: string = 'dairy';
+  public category: string = '';
   public description: string = '';;
   public completed: boolean = false;
   public image: string = '';
-  public categories: string[] = ['general', 'dairy', 'meat', 'vegetables', 'fruits', 'drinks', 'snacks', 'other'];
   constructor(
     private inventoryService: InventoryService,
     private ListService: ListService,
-    private socketService: SocketsService
+    private socketService: SocketsService,
   ) { }
 
   ngOnInit(): void {
-    this.getAllTasks();
-
+    this.getInventoryByCategory(this.parentId);
+    console.log(this.parentId);
     // Susbcribe to socket event and set callback
-    this.socketService.subscribe("tasks_update", (data: any) => {
-      this.getAllTasks();
+    this.socketService.subscribe("inventory_update", (data: any) => {
+      this.getInventoryByCategory(this.parentId);
+    });
+  }
+
+  private getInventoryByCategory(cat: string): void {
+    this.inventoryService.getAllInventoryByCategory(cat).subscribe((result) => {
+      this.items = result;
     });
   }
 
@@ -65,6 +71,7 @@ export class ItemViewComponent implements OnInit {
       this.quantity = 0;
       this.category = 'dairy';
       this.socketService.publish("inventory_update", task);
+      this.socketService.publish("list_update", task);
     });
   }
 
@@ -92,7 +99,7 @@ export class ItemViewComponent implements OnInit {
           this.inventoryService.updateList(item).subscribe(
             () => {
               console.log("Item quantity updated.");
-              this.socketService.publish("tasks_update", item);
+              this.socketService.publish("list_update", item);
             },
             error => {
               console.error("Error updating item quantity:", error);

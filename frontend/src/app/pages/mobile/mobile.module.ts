@@ -16,6 +16,7 @@ import { TasksViewComponent } from './tasks/tasks-view/tasks-view.component';
 import { CookComponent } from './cook/cook.component';
 import { DishComponent } from './cook/dish/dish.component';
 import { TimeService } from 'src/app/global/services/time_service/time-service.service';
+import { ItemViewComponent } from './item-shop/item-preview/item/item.component';
 
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
@@ -31,7 +32,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     HomeComponent,
     TasksViewComponent,
     CookComponent,
-    DishComponent
+    DishComponent,
+    ItemViewComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
