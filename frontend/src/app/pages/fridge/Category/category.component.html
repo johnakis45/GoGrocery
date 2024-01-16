@@ -1,0 +1,76 @@
+
+<!-- <p class="top"></p> -->
+
+<fridge-category-view></fridge-category-view>
+
+<div class="title exptitle">Expired</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of expired" class="expired category">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <!-- <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div> -->
+  </div>
+</div>
+
+<div class="title expsoontitle">Expires Soon</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of expiressoon" class="expiressoon category">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <!-- <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div> -->
+  </div>
+</div>
+
+<div class="title lowtitle">Low Quantity</div>
+<div class="wrapper_d">
+  <div *ngFor="let item of lowquantity" class="lowquantity category">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 inv-img">
+          <img class="card-img-top fixed-height-ima " src="{{item.image}}" alt="dish">
+        </div>
+        <div class="col-3 inv-qnt">
+          <p class="quantity">x {{item.quantity}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="inv-title">
+      {{item.title}}
+    </div>
+    <!-- <div class="status">
+      <div class="add">
+        {{status}}
+      </div>  
+    </div> -->
+  </div>
+</div>
