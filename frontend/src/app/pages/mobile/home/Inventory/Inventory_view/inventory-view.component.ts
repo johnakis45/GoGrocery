@@ -4,6 +4,7 @@ import { InventoryModel } from 'src/app/global/models/inventory/inventory.model'
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-inventory-view',
@@ -30,6 +31,7 @@ export class InventoryViewComponent implements OnInit {
   public completed: boolean = false;
   public image: string = '';
   constructor(
+    private snackBar: MatSnackBar,
     private inventoryService: InventoryService,
     private ListService: ListService,
     private socketService: SocketsService,
@@ -142,6 +144,19 @@ export class InventoryViewComponent implements OnInit {
         // Handle other errors if needed
         this.isAdded = false; // Ensure isAdded is set to false in case of an error
       }
+      
     );
+
+    this.showNotification(title);
+
+
+  }
+
+  showNotification(title: string) {
+    let message = `Item ${title} is added`;
+    this.snackBar.open(message, 'Close', {
+      duration: 2000,
+      verticalPosition: 'top'
+    });
   }
 }
