@@ -203,27 +203,41 @@ export class InventoryComponent implements OnInit {
 
   // ];
 
-  // meatnfish = [
-  //   { title: 'Apple' ,image: 'assets/fridge/fruits/apple.png',quantity: "2"},
-  //   { title: 'Pear' ,image: 'assets/fridge/fruits/pear.png',quantity: "2"},
-  //   { title: 'Orange' ,image: 'assets/fridge/fruits/orange.png',quantity: "2"},
-  //   { title: 'Banana' ,image: 'assets/fridge/fruits/banana.png',quantity: "2"},
-  // ];
+  meatnfish = [
+    { title: 'Chicken' ,image: 'assets/fridge/meatnfish/chicken.png',quantity: "1"},
+    { title: 'Pork' ,image: 'assets/fridge/meatnfish/pork.png',quantity: "3"},
+    { title: 'Salmon' ,image: 'assets/fridge/meatnfish/salmon.png',quantity: "2"},
+  ];
 
-  // dairy = [
-  //   { title: 'Apple' ,image: 'assets/fridge/fruits/apple.png',quantity: "2"},
-  //   { title: 'Pear' ,image: 'assets/fridge/fruits/pear.png',quantity: "2"},
-  //   { title: 'Orange' ,image: 'assets/fridge/fruits/orange.png',quantity: "2"},
-  //   { title: 'Banana' ,image: 'assets/fridge/fruits/banana.png',quantity: "2"},
-  // ];
+  dairy = [
+    { title: 'Milk' ,image: 'assets/fridge/dairy/milk.png',quantity: "1"},
+    { title: 'Eggs' ,image: 'assets/fridge/dairy/eggs.png',quantity: "7"},
+    { title: 'Butter' ,image: 'assets/fridge/dairy/butter.png',quantity: "1"},
+    { title: 'Mozzarella' ,image: 'assets/fridge/dairy/mozzarellacheese.png',quantity: "3"},
+  ];
 
-  // drinks = [
-  //   { title: 'Apple' ,image: 'assets/fridge/fruits/apple.png',quantity: "2"},
-  //   { title: 'Pear' ,image: 'assets/fridge/fruits/pear.png',quantity: "2"},
-  //   { title: 'Orange' ,image: 'assets/fridge/fruits/orange.png',quantity: "2"},
-  //   { title: 'Banana' ,image: 'assets/fridge/fruits/banana.png',quantity: "2"},
-  // ];
+  drinks = [
+    { title: 'Cola' ,image: 'assets/fridge/drinks/cola.png',quantity: "4"},
+    { title: 'Cola Zero' ,image: 'assets/fridge/drinks/colazero.png',quantity: "5"},
+    { title: 'Sprite' ,image: 'assets/fridge/drinks/sprite.png',quantity: "2"},
+    { title: 'Dr Pepper' ,image: 'assets/fridge/drinks/drpepper.png',quantity: "3"},
+    { title: 'Mountain Dew' ,image: 'assets/fridge/drinks/mtndew.png',quantity: "2"},
+  ];
 
 
+  selectedCategory: string | null = null;
+
+  selectCategory(item: any): void {
+    this.selectedCategory = this.selectedCategory === item.category ? null : item.category;
+    console.log(this.selectedCategory);
+  }
+
+  // toggleCategory(category: string): void {
+  //   console.log('Category clicked:', category);
+  //   if (this.selectedCategory !== category) {
+  //     this.selectedCategory = category;
+  //     console.log('Category icon:', this.selectedCategory);
+  //   }
+  // }
 
 }
