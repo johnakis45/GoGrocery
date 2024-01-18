@@ -35,19 +35,19 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4">
-            <div class="RecExpired">
+            <div class="RecExpired" routerLink="/fridge/category">
                 <div class="NumExpired">{{expired}}</div>
                 <div class="expiredTitle">Expired</div>
             </div>
         </div>
         <div class="col-4">
-            <div class="RecExpiresSoon">
+            <div class="RecExpiresSoon" routerLink="/fridge/category">
                 <div class="NumExpiresSoon">{{expires_soon}}</div>
                 <div class="expiresSoonTitle">Expires Soon</div>
             </div>
         </div>
         <div class="col-4">
-            <div class="RecLowQuantity">
+            <div class="RecLowQuantity" routerLink="/fridge/category">
                 <div class="NumLowQuantity">{{low_quantity}}</div>
                 <div class="lowQuantityTitle">Low Quantity</div>
             </div>

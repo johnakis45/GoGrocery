@@ -29,6 +29,14 @@ export class ItemsService {
       .get<ItemModel>(`${this.hostURl}/api/item-shop/${id}`)
       .pipe(map(result => new ItemModel(result)));
   }
+
+  public getAllItemByCategory(cat: string): Observable<ItemModel[]> {
+    const url = `${this.hostURl}/api/item-shop`;
+    return this.http
+    .get<ItemModel[]>(url)
+    .pipe(map(result => result.filter(item => item.category === cat).map(t => new ItemModel(t))));
+  }
+
   
   public create(resource: ItemModel): Observable<ItemModel> {
     return this.http

@@ -9,8 +9,8 @@ import { InventoryComponent } from './Inventory/inventory.component';
 import { InventoryViewComponent } from './Inventory/Inventory_view/inventory-view.component';
 import { ShoppingListViewComponent } from './ShoppingList/ShoppingList_view/shoppinglist-view.component';
 import { ShoppingListComponent } from './ShoppingList/shoppinglist.component';
-import { CategoryViewComponent } from './Category/Category_view/category-view.component';
 import { CategoryComponent } from './Category/category.component';
+import { CategoryViewComponent } from './Category/Category_view/category-view.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -20,8 +20,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     InventoryComponent,
     ShoppingListViewComponent,
     ShoppingListComponent,
-    CategoryViewComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryViewComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
