@@ -1,0 +1,181 @@
+
+
+@font-face {
+  font-family: 'Sansita Swashed';
+  src: url('/assets/fonts/SansitaSwashed-Regular.ttf') format('truetype');
+}
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  display: flex;
+  object-fit: contain;
+}
+
+svg {
+  display: flex;
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  width: 1080.6084px;
+  height: 405.6465px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// WEATHER AND TIME
+.sun {
+    display: flex;
+    // position: absolute;
+    // left: 0.7041%;
+    // right: 91.5225%;
+    // top: 0;
+    // bottom: 81.5388%;
+    // overflow: visible;
+    margin-top: 15px;
+    margin-left: -15px;
+  }
+.time {
+    display: flex;
+    color: #000;
+    font-size: 60px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    // position: absolute;
+    // left: 11.9502%;
+    // right: 77.6853%;
+    // top: 3.6107%;
+    // bottom: 91.952%;
+    width: min-content;
+    height: min-content;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-top: 45px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+  }
+  .weather{
+    display: flex;
+    color: #000;
+    font-size: 40px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    // position: absolute;
+    // left: 11.9502%;
+    // right: 77.6853%;
+    // left: 9%;
+    // top: 14.5139%;
+    // bottom: 81.4488%;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  .leftLine {
+    display: flex;
+    height:1px;
+    width: 380px;
+    border-width:0;
+    background-color:#00000080;
+    margin-top: 45px;
+    margin-left: -30px;
+  }
+
+  //TITLE
+  .title {
+    .Go{
+      color: #5FB57E; 
+      font-size: 60px; 
+      font-family: 'Sansita Swashed', sans-serif;
+      font-weight: 400; 
+      line-height: 18px; 
+      word-wrap: break-word;
+    }
+    .Grocery {
+      color: #181725; 
+      font-size: 60px; 
+      font-family: 'Sansita Swashed', sans-serif; 
+      font-weight: 400; 
+      line-height: 18px; 
+      word-wrap: break-word;
+    }
+    display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    width:80%;
+    margin:auto;
+    margin-top: 55px;
+  }
+
+//DAY AND DATE
+.dayNdate {
+  text-align: right;
+}
+
+  //display: flex;
+  .day{
+    display: flex;
+    color: #000;
+    font-size: 40px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 63%;
+    // left: 80.6853%;
+    // right: 11.9502%;
+    // top: 3.6107%;
+    // bottom: 91.952%;
+    width: min-content;
+    height: min-content;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-top: 45px;
+  }
+  .date{
+    display: flex;
+    color: #000;
+    font-size: 40px;
+    line-height: 18px;
+    font-family: Questrial, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 25%;
+    // right: 11.9502%;
+    // top: 14.5139%;
+    // bottom: 81.4488%;
+    width: 70%;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+    margin-top: 95px;
+  }
+  
+  .rightLine {
+    display: flex;
+    height:1px;
+    width: 380px;
+    border-width:0;
+    background-color:#00000080;
+    margin-top: 158px;
+    margin-right: -20px;
+  }
+

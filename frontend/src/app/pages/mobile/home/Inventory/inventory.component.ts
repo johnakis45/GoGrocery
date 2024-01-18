@@ -9,7 +9,7 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })
-export class InventoryComponent implements OnInit {
+export class InventoryComponentApp implements OnInit {
   public id: string = '';
   public title: string = '';
   private routeSub: Subscription = new Subscription();

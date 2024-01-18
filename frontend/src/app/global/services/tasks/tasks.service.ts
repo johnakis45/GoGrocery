@@ -65,4 +65,8 @@ export class ListService {
     return this.http.delete<void>(`${this.hostURl}/api/list/${id}`);
   }
 
+  public deleteAll(): Observable<void> {
+    return this.http.delete<void>(`${this.hostURl}/api/list/all`);
+  }
+
 }

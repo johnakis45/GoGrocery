@@ -1,3 +1,4 @@
+
 <div class="container-fluid py-3">
     <div class="row">
         <div class="col-6" *ngFor="let item of items">
@@ -10,8 +11,7 @@
                 <div class="card-body" style="white-space: nowrap;"></div>
                 <h2 class="card-title">{{ item.title }} </h2>
                 <div class="btn_br">
-                    <div class="add" (click)="addItem(item.image, item.title, item.quantity,item.description,item.category)">Add</div>
-                    <div class="added" *ngIf="isAdded">Added</div>                   
+                    <div class="add" (click)="addItem(item.image, item.title, item.quantity,item.description,item.category)">Add</div>         
                 </div>
             </div>
         </div>
@@ -32,3 +32,4 @@
         </div>
     </div>
 </div>
+

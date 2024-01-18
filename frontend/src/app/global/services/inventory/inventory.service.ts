@@ -39,6 +39,12 @@ export class InventoryService {
       .pipe(map(result => new InventoryModel(result)));
   }
 
+  public getByTitleInventory(title :string): Observable<InventoryModel>{
+    return this.http
+    .get<InventoryModel>(`${this.hostURl}/api/inventory/title/${title}`)
+    .pipe(map(result => new InventoryModel(result)));
+  }
+
 
   public createInventory(resource: InventoryModel): Observable<InventoryModel> {
     return this.http

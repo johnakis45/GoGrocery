@@ -1,0 +1,71 @@
+
+
+@font-face {
+  font-family: 'Sansita Swashed';
+  src: url('/assets/fonts/SansitaSwashed-Regular.ttf') format('truetype');
+}
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  display: flex;
+  object-fit: contain;
+}
+
+svg {
+  display: flex;
+  overflow: visible;
+}
+
+:host {
+  position: relative;
+  width: 1080.6084px;
+  height: 405.6465px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+  .purple {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    width: 970px;
+    height: 911px;
+    background-image: linear-gradient(45.0deg, rgb(182, 169, 250) 0%, #ffffff00 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .pink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-origin: top left;
+    position: absolute;
+    left: 1930.3458px;
+    top: 905px;
+    width: 970px;
+    height: 911px;
+    background-image: linear-gradient(133.5deg, #e88eb1ff 0%, #d9d9d900 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    transform: matrix(-1, 0.0004, -0.0004, -1, 0, 0);
+  }
+  
+  //CATEGORIES
+
+  //LOW QUANTITY

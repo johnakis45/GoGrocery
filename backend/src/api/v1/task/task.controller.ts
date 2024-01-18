@@ -33,7 +33,8 @@ export class TaskController extends ResourceController<ITask>{
             .get('/title/:title', this.getTaskByTitle)
             .post('/', this.postTask)
             .put('/:id', this.updateTask)
-            .delete('/:id', this.deleteTask);
+            .delete('/:id', this.deleteTask)
+            .delete('/all', this.deleteAllTask);
 
         return router;
     }
@@ -89,6 +90,22 @@ export class TaskController extends ResourceController<ITask>{
             .json(task);
 
     }
+
+    /**
+     * Delete all tasks
+     * @param req 
+     * @param res 
+     */
+    deleteAllTask = async (req: Request, res: Response) => {
+        this.logger.debug('deleteAllTask request');
+        // you can pre-process the request here before passing it to the super class method
+        const task = await this.deleteAll(req, res);
+        // you can process the data retrieved here before returning it to the client
+        return res
+            .status(StatusCodes.OK)
+            .json(task);
+        }
+        
 
     /**
      * Update task by id

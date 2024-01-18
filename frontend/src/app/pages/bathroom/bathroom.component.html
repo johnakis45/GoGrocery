@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="weatherNtime">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="sun"><img src="assets/fridge/sun.svg" alt="" class="sun" /></div>
+                            <hr class="leftLine">
+                        </div>
+                        <div class="col-8">
+                            <div class="time">{{ currentDate | date:'shortTime' }}</div>
+                            <div class="weather">{{ weather }}°C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <div class="title text-center">
+                <div><span class="Go">Go</span><span class="Grocery">Grocery</span></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="dayNdate">
+                <div class="day">{{currentDate | date:'EEEE'}}</div>
+                <div class="date">{{currentDate | date:'dd MMMM yyyy'}}</div>
+            </div>
+            <hr class="rightLine">
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+
+

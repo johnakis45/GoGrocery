@@ -22,14 +22,14 @@ export class HomeComponent implements OnInit {
   }
 
   cards = [
-    { title: 'Fruits & Vegetables', imageUrl: 'assets/categories/fruits.png', Backcolor: "rgba(83, 177, 117, 0.3)",color:"rgba(83, 177, 117, 0.7)",routerLink:"/home/Inventory",category: "Fruits_Vegetables" },
-    { title: 'Cooking Oils', imageUrl: 'assets/categories/oils.png', Backcolor: "rgba(248, 164, 76, 0.3)" ,color:"rgba(248, 164, 76, 0.7)",routerLink:"/home/Inventory",category:"Cooking_Oils"},
-    { title: 'Meat & Fish', imageUrl: 'assets/categories/meat.png', Backcolor: 'rgba(247, 165, 147, 0.3)', color:"rgba(247, 165, 147, 1)",routerLink:"/home/Inventory",category:"Meat_Fish"},
-    { title: 'Bakery & Snacks', imageUrl: 'assets/categories/bread.png', Backcolor: 'rgba(211, 176, 224, 0.3)', color:"rgba(211, 176, 224, 1)",routerLink:"/home/Inventory",  category:"Bakery_Snacks"},
-    { title: 'Dairy & Eggs', imageUrl: 'assets/categories/milk.png', Backcolor: 'rgba(253, 229, 152, 0.3)', color:"rgba(253, 229, 152, 1)",routerLink:"/home/Inventory",category:"Dairy_Eggs"},
-    { title: 'Beverages', imageUrl: 'assets/categories/beverages.png', Backcolor: 'rgba(183, 223, 245, 0.7)', color:"rgba(183, 223, 245, 1)",routerLink:"/home/Inventory",category:"Beverages"},
-    { title: 'Hygiene Sypplies', imageUrl: 'assets/categories/hygiene.png', Backcolor: 'rgba(131, 106, 246, 0.3)', color:"rgba(131, 106, 246, 1)",routerLink:"/home/Inventory", category:"Hygiene_Sypplies"},
-    { title: 'Cleaning Sypplies', imageUrl: 'assets/categories/cleaning.png', Backcolor: 'rgba(215, 59, 119, 0.3)', color:"rgba(215, 59, 119, 1)",routerLink:"/home/Inventory",category:"Cleaning_Sypplies"},
+    { title: 'Fruits & Vegetables', imageUrl: 'assets/categories/fruits.png', Backcolor: "rgba(83, 177, 117, 0.3)",color:"rgba(83, 177, 117, 0.7)",category: "Fruits_Vegetables" },
+    { title: 'Cooking Oils', imageUrl: 'assets/categories/oils.png', Backcolor: "rgba(248, 164, 76, 0.3)" ,color:"rgba(248, 164, 76, 0.7)",category:"Cooking_Oils"},
+    { title: 'Meat & Fish', imageUrl: 'assets/categories/meat.png', Backcolor: 'rgba(247, 165, 147, 0.3)', color:"rgba(247, 165, 147, 1)",category:"Meat_Fish"},
+    { title: 'Bakery & Snacks', imageUrl: 'assets/categories/bread.png', Backcolor: 'rgba(211, 176, 224, 0.3)', color:"rgba(211, 176, 224, 1)",  category:"Bakery_Snacks"},
+    { title: 'Dairy & Eggs', imageUrl: 'assets/categories/milk.png', Backcolor: 'rgba(253, 229, 152, 0.3)', color:"rgba(253, 229, 152, 1)",category:"Dairy_Eggs"},
+    { title: 'Beverages', imageUrl: 'assets/categories/beverages.png', Backcolor: 'rgba(183, 223, 245, 0.7)', color:"rgba(183, 223, 245, 1)",category:"Beverages"},
+    { title: 'Hygiene Sypplies', imageUrl: 'assets/categories/hygiene.png', Backcolor: 'rgba(131, 106, 246, 0.3)', color:"rgba(131, 106, 246, 1)", category:"Hygiene_Sypplies"},
+    { title: 'Cleaning Sypplies', imageUrl: 'assets/categories/cleaning.png', Backcolor: 'rgba(215, 59, 119, 0.3)', color:"rgba(215, 59, 119, 1)",category:"Cleaning_Sypplies"},
     // Add more cards as needed
   ];
 

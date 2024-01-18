@@ -39,6 +39,21 @@ export class ResourceController<T extends Document> {
   }
 
   /**
+   * Delete all resources
+   */
+   
+  public async deleteAll(req: Request, res: Response, next?: NextFunction): Promise<any> {
+    try {
+      const resources = await this.modelSchema
+        .deleteMany({})
+        .exec();
+      return resources;
+    } catch (e) {
+      next ? next(e) : res.status(StatusCodes.BAD_REQUEST).json(e);
+    }
+  }
+
+  /**
    * Create a new resource model
    */
   public async create(req: Request, res: Response, next?: NextFunction): Promise<any | undefined> {

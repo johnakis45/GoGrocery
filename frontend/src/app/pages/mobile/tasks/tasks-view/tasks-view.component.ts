@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
+
+
 
 @Component({
   selector: 'app-tasks-view',
@@ -10,6 +12,7 @@ import { InventoryService } from 'src/app/global/services/inventory/inventory.se
 })
 
 export class TasksViewComponent implements OnInit {
+  @ViewChild('notification') notification!: ElementRef;
   public tasks: InventoryModel[] = [];
   public title: string = '';
   public description: string = '';
@@ -20,7 +23,9 @@ export class TasksViewComponent implements OnInit {
   constructor(
     private InventoryService: InventoryService,
     private socketService: SocketsService
-  ) { }
+  ) {
+    this.notification = new ElementRef(null);
+  }
 
   ngOnInit(): void {
     this.getAllTasks();
@@ -59,13 +64,18 @@ export class TasksViewComponent implements OnInit {
   }
 
   public deleteTask(task: InventoryModel): void {
-    const response = confirm("Are you sure you want to delete this task?");
-    if (response) {
+    //const response = confirm("Are you sure you want to delete this task?");
+    this.notification.nativeElement.classList.add("notification-show");
+
+    setTimeout(() => {
+      this.notification.nativeElement.classList.remove("notification-show");
+    }, 2000);
+   //if (response) {
       this.InventoryService.deleteList(task._id).subscribe(() => {
         this.getAllTasks();
         this.socketService.publish("list_update", {});
       });
-    }
+    //}
   }
 
   public add(task: InventoryModel): void {
@@ -79,6 +89,11 @@ export class TasksViewComponent implements OnInit {
   public subtract(task: InventoryModel): void {
     let quantity = task.quantity;
     if (quantity == 1) {
+      this.notification.nativeElement.classList.add("notification-show");
+
+    setTimeout(() => {
+      this.notification.nativeElement.classList.remove("notification-show");
+    }, 2000);
       this.InventoryService.deleteList(task._id).subscribe(() => {
         this.getAllTasks();
         this.socketService.publish("list_update", {});

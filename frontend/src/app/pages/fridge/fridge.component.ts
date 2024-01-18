@@ -29,10 +29,10 @@ export class FridgeComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    // this.fetchWeather();
-    // setInterval(() => {
-    //   this.fetchWeather();
-    // }, 180 * 60 * 1000);
+    this.fetchWeather();
+    setInterval(() => {
+      this.fetchWeather();
+    }, 180 * 60 * 1000);
 
     this.getAll();
     // Susbcribe to socket event and set callback
@@ -40,12 +40,15 @@ export class FridgeComponent implements OnInit, OnDestroy {
     this.socketService.subscribe("inventory_update", (data: any) => {
       this.getAll();
     });
-    this.speaker.addCommand("add this", () => { console.log("What should I add?") });
+    this.speaker.addCommand("add two bananas", () => { console.log("What should I add?") });
+    this.speaker.addCommand("add milk", () => { console.log("What should I add?") });
     this.speaker.addCommand("remove this", () => { console.log("What should I remove?") });
     this.speaker.initialize();
     this.speaker.start();
 
   }
+
+
 
   ngOnDestroy(): void {
     this.speaker.stop();

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { DishCardModel } from 'src/app/global/models/Dish/dish.model';
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { DishService } from 'src/app/global/services/cook/dish.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
+import { SmartSpeakerService } from 'src/app/global/services/smart-speaker/smart-speaker.service';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
 
@@ -12,6 +13,7 @@ import { ListService } from 'src/app/global/services/tasks/tasks.service';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
+  @ViewChild('notification') notification!: ElementRef;
   public items: InventoryModel[] = [];
 
   public fruits: InventoryModel[] = [];
@@ -26,7 +28,9 @@ export class InventoryComponent implements OnInit {
   constructor(
     private dishService: DishService,
     private socketService: SocketsService,
-    private inventoryService : InventoryService) { }
+    private speaker: SmartSpeakerService,
+    private inventoryService : InventoryService,
+    private ListService : ListService) { }
 
   ngOnInit(): void { 
     this.getAll();
@@ -35,7 +39,78 @@ export class InventoryComponent implements OnInit {
     this.socketService.subscribe("inventory_update", (data: any) => {
       this.getAll();
     });
+    this.speaker.addCommand("add two bananas", () => { this.add("Banana",2) });
+    this.speaker.addCommand("add milk", () => { this.add("Milk") });
+    this.speaker.addCommand("remove this", () => { console.log("What should I remove?") });
+    this.speaker.initialize();
+    this.speaker.start();
   }
+
+  public add(cat : string,quantity: number = 1){
+    console.log("add item");
+    const existingItem = this.ListService.getByTitle(cat);
+    existingItem.subscribe(
+      (item: InventoryModel | null) => {
+        if (item !== null) {
+          // Existing item found
+          if(quantity > 1){
+            item.quantity += quantity;
+          }else{
+            item.quantity += 1;
+          }
+          this.inventoryService.updateList(item).subscribe(
+            () => {
+              console.log("Item quantity updated.");
+              this.socketService.publish("list_update", item);
+            },
+            error => {
+              console.error("Error updating item quantity:", error);
+              // Handle error updating quantity if needed
+            }
+          );
+        } else {
+          // Item not found, create a new one
+          const newItem = new InventoryModel();
+          newItem.title = cat;
+          if(cat == "Banana"){
+            newItem.description = "Banana";
+            newItem.category = "Fruits_Vegetables";
+            newItem.subcategory = "Fruits";
+            newItem.image = "assets/fridge/fruits/banana.png";
+            newItem.quantity = 2;
+          }else if(cat == "Milk"){
+            newItem.description = "Milk";
+            newItem.category = "Dairy_Eggs";
+            newItem.subcategory = "Dairy";
+            newItem.image = "assets/milk.png";
+            newItem.quantity = 1;
+          }
+          newItem.completed = false;
+          console.log("add item");
+  
+          this.ListService.create(newItem).subscribe(
+            result => {
+              this.socketService.publish("list_update", newItem);
+            },
+            error => {
+              console.error("Error creating new item:", error);
+              // Handle error creating new item if needed
+            }
+          );
+        }
+      }
+    );
+      
+    this.notification.nativeElement.classList.add("notification-show");
+    setTimeout(() => {
+      console.log("remove");
+      this.notification.nativeElement.classList.remove("notification-show");
+    }, 2000);
+
+  }
+
+
+
 
   private getAll(): void {
     this.inventoryService.getAllInventory().subscribe((result) => {

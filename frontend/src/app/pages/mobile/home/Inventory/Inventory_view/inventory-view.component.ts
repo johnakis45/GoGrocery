@@ -1,13 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input ,OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { InventoryModel } from 'src/app/global/models/inventory/inventory.model';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { InventoryService } from 'src/app/global/services/inventory/inventory.service';
 import { ListService } from 'src/app/global/services/tasks/tasks.service';
-// import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-inventory-view',
+  selector: 'inventory-view',
   templateUrl: './inventory-view.component.html',
   styleUrls: ['./inventory-view.component.scss'],
   animations: [
@@ -21,7 +20,9 @@ import { ListService } from 'src/app/global/services/tasks/tasks.service';
 })
 
 export class InventoryViewComponent implements OnInit {
+  @ViewChild('notification') notification!: ElementRef;
   @Input() parentId: string = '';
+  isClicked = false;
   public items: InventoryModel[] = [];
   public imageURL: string = 'assets/Screenshot_4.png';
   public title: string = '';
@@ -45,6 +46,10 @@ export class InventoryViewComponent implements OnInit {
       this.getInventoryByCategory(this.parentId);
     });
   }
+  
+  // showSuccess() {
+  //   this.toast.success({detail:'Success',summary:'This is Success', sticky:true,position:'topRight'});
+  // }
 
   private getInventoryByCategory(cat: string): void {
     this.inventoryService.getAllInventoryByCategory(cat).subscribe((result) => {
@@ -91,7 +96,7 @@ export class InventoryViewComponent implements OnInit {
 
   isAdded: boolean = false;
   public addItem(image: string, title: string, quantity: number, category: string, description: string) {
-    
+    console.log("add item");
     const existingItem = this.ListService.getByTitle(title);
     existingItem.subscribe(
       (item: InventoryModel | null) => {
@@ -146,9 +151,13 @@ export class InventoryViewComponent implements OnInit {
       }
       
     );
-
-    //this.showNotification(title);
-
+      
+    this.notification.nativeElement.classList.add("notification-show");
+    setTimeout(() => {
+      console.log("remove");
+      this.notification.nativeElement.classList.remove("notification-show");
+    }, 2000);
+    
 
   }
 

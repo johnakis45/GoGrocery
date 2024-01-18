@@ -154,7 +154,7 @@ addMissingItems() {
     list_item.title = item.title;
     list_item.description = "";
     list_item.completed = false;
-    list_item.category = "Fruits_Vegetables";
+    list_item.category = item.category;
     list_item.quantity = 1;
     list_item.image = item.image;
     console.log(list_item);
@@ -172,12 +172,13 @@ addMissingItems() {
   }
 
   public async AddAllMissingItems(): Promise<void> {
+    console.log(this.missing_items);
     for (const element of this.missing_items) {
       await this.addItem(element);
     }
     setTimeout(() => {
-      window.location.reload();
-    }, 500);
-  }
+       window.location.reload();
+     }, 500);
+   }
   
 }

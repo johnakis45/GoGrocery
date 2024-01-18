@@ -18,6 +18,7 @@ export class InventoryController extends ResourceController<Iinventory>{
         router
             .get('/', this.getInventory)
             .get('/:id', this.getInventoryById)
+            .get('/title/:title',this.getInventoryByTitle)
             .post('/', this.postInventory)
             .put('/:id', this.updateInventory)
             .delete('/:id', this.deleteInventory);
@@ -106,6 +107,31 @@ export class InventoryController extends ResourceController<Iinventory>{
         return res
             .status(StatusCodes.OK)
             .json(task);
+    }
+
+    findByTitle = async (title: string): Promise<Iinventory | null> => {
+        const task = InventoryModel.findOne({ title }).exec();
+        return task || null; // If task is null (not found), return null
+    };
+
+    getInventoryByTitle = async (req: Request, res: Response) => {
+        this.logger.debug('getInventoryByTitle request');
+        // you can pre-process the request here before passing it to the super class method
+        try {
+            const task = await this.findByTitle(req.params.title);
+            if (!task) {
+                return res.status(StatusCodes.NOT_FOUND).json({ error: 'Inventory not found' });
+            }
+
+            // you can process the data retrieved here before returning it to the client
+            return res
+                .status(StatusCodes.OK)
+                .json(task);
+        } catch (error) {
+            // Handle errors appropriately
+            this.logger.error('Error fetching task by title', error);
+            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Internal server error' });
+        }
     }
 
 }
